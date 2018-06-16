@@ -1,3 +1,72 @@
+<!--MENU IZZQUIERDA-->
+
+     <ul class="menu">
+      <li><a href="#">
+        <img src="libs/images/manage.png" width="100px"></a>
+      </li>
+      <li>
+        <a href="admin.php"><i class="izq fas fa-home izq"></i>Panel de Control</a>
+      </li>
+      <li>
+        <a href="#"><i class="izq fas fa-users izq"></i>Accesos</a>
+      </li>
+      <li>
+        <a href="#"><i class="izq fab fa-elementor izq"></i>Categorias</a>
+      </li>
+      <li>
+        <a href="#"><i class="izq fab fa-product-hunt izq"></i>Productos<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Productos</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar productos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><i class="izq fas fa-images izq"></i>Media</a>
+      </li>
+      <li>
+
+        <a href="#"><i class="izq fab fa-sellsy izq"></i>Ventas<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+
+        <a href="#"><i class="izq fas fa-chart-line izq"></i>Reporte de Ventas<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
+          </li>
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="logout.php"><i class="fas fa-sign-out-alt izq"></i>Salir</a></li>
+      <li>
+
+</ul>
+
+<!--
 <ul>
   <li>
     <a href="admin.php">
@@ -59,3 +128,6 @@
       </ul>
   </li>
 </ul>
+
+
+-->

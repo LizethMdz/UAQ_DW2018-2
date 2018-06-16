@@ -1,3 +1,48 @@
+<!--MENU IZZQUIERDA-->
+
+     <ul class="menu">
+      <li><a href="#">
+        <img src="libs/images/manage.png" width="100px"></a>
+      </li>
+      <li>
+        <a href="#"><i class="izq fas fa-home izq"></i>Panel de Control</a></li>
+      <li>
+
+        <a href="#"><i class="izq fab fa-sellsy izq"></i>Ventas<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+
+        <a href="#"><i class="izq fas fa-chart-line izq"></i>Reporte de Ventas<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
+          </li>
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="logout.php"><i class="fas fa-sign-out-alt izq"></i>Salir</a></li>
+      <li>
+</ul>
+<!--
 <ul>
   <li>
     <a href="home.php">
@@ -26,4 +71,4 @@
         <li><a href="daily_sales.php">Ventas diarias</a> </li>
       </ul>
   </li>
-</ul>
+</ul>-->

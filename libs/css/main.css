@@ -98,7 +98,12 @@ body{
     display: inline-block;
     width: 250px;
      background-color: #16a085;
-}.header-date{
+}
+.header-date-up{
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 65px;
   color: #9b9b9b;
   margin-left: 20px;
 }

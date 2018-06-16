@@ -1,26 +1,35 @@
-<?php
-  $page_title = 'Admin página de inicio';
-  require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
-   page_require_level(1);
-?>
-<?php
- $c_categorie     = count_by_id('categories');
- $c_product       = count_by_id('products');
- $c_sale          = count_by_id('sales');
- $c_user          = count_by_id('users');
- $products_sold   = find_higest_saleing_product('10');
- $recent_products = find_recent_product_added('5');
- $recent_sales    = find_recent_sale_added('5')
-?>
-<?php include_once('layouts/header2.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	Sistema de Inventario</title>
+  <link rel="stylesheet" href="../libs/css/estilos.css" />
+  <link rel="stylesheet" href="../libs/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+  <header id="header">
+      <div class="logo"> SIST-INVENT </div>
+           <div class="header-date-up">
+            hola
+            </div>
+             <div class="header-user">
+              Usuario
+            </div>
+  </header>
+  
+      <div class="sidebar"></div>
 
+      <!--<div class="contenido">
+        CONTEINDO
+      </div>-->
 
       <div class="panel-control">
         <article class="full-width tile">
         <div class="tile-text">
           <span class="text-condensedLight">
-            <?php  echo $c_user['total']; ?><br>
+            2<br>
             <small>Administradores</small>
           </span>
         </div>
@@ -32,7 +41,7 @@
       <article class="full-width tile">
         <div class="tile-text">
           <span class="text-condensedLight">
-            <?php  echo $c_categorie['total']; ?><br>
+            9<br>
             <small>Categorias</small>
           </span>
         </div>
@@ -43,7 +52,7 @@
       <article class="full-width tile">
         <div class="tile-text">
           <span class="text-condensedLight">
-            <?php  echo $c_product['total']; ?><br>
+            121<br>
             <small>Productos</small>
           </span>
         </div>
@@ -54,7 +63,7 @@
       <article class="full-width tile">
         <div class="tile-text">
           <span class="text-condensedLight">
-            <?php  echo $c_sale['total']; ?><br>
+            47<br>
             <small>Ventas</small>
           </span>
         </div>
@@ -67,13 +76,13 @@
 
       <div class="tablas">
         <div class="tabla ">
-          <div class="tabla-encabezado">
+          <div class="encabezado">
             <i class="fas fa-th table-icon"></i>
               <p>MAS VENDIDOS</p>
           
           </div>
           <div class="contenedor-tabla">
-          <table border="1px" class="tabla-datos">
+          <table border="1px" class="tabla-pro">
           <thead>
             <tr>
               <th>Titulo</th>
@@ -95,12 +104,12 @@
          
         </div>
         <div class="tabla ">
-           <div class="tabla-encabezado">
+           <div class="encabezado">
             <i class="fas fa-th table-icon"></i>
               <p>ULTIMAS VENTAS</p>
           </div>
           <div class="contenedor-tabla">
-          <table border="1px" class="tabla-datos">
+          <table border="1px" class="tabla-pro">
           <thead>
             <tr>
               <th>#</th>
@@ -136,6 +145,7 @@
               <p>PRODUCTOS RECIENTES</p>
           </div>
           <div class="contenedor-tabla">
+
           <table border="1px" class="tabla-datos">
           <thead>
             <tr>
@@ -144,25 +154,16 @@
               <th>Precio</th>
             </tr>
           </thead>
-          <?php foreach ($recent_products as  $recent_product): ?>
-            
+            <a href="edit_product.php?id=<?php echo(int)$recent_product['id'];?>">
             <tr>
-              
-              <td>
-                <a href="edit_product.php?id=<?php echo(int)$recent_product['id'];?>">
-                <?php if($recent_product['media_id'] === '0'): ?>
-                    <img class="img-avatar" src="uploads/products/no_image.jpg" alt="">
-                  <?php else: ?>
-                   <img class="img-avatar" src="uploads/products/<?php echo $recent_product['image'];?>" alt="" />
-              <?php endif;?>
-              </a>
-            </td>
-              
+              <td><a href="#"></a>
+              <img class="img-avatar img-circle" src="uploads/products/<?php echo $recent_product['image'];?>" alt="" />
+              </td>
               <td><?php echo remove_junk(first_character($recent_product['name']));?></td>
               <td>$ <?php echo (int)$recent_product['sale_price']; ?></td>
             </tr>
-          
-          <?php endforeach; ?>
+            
+          </a>
         </table>
           </div>
         </div>
@@ -173,5 +174,5 @@
 
 
 
-
-<?php include_once('layouts/footer.php'); ?>
+</body>
+</html>
