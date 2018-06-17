@@ -8,7 +8,16 @@
         <a href="admin.php"><i class="izq fas fa-home izq"></i>Panel de Control</a>
       </li>
       <li>
-        <a href="#"><i class="izq fas fa-users izq"></i>Accesos</a>
+        <a href="#"><i class="izq fas fa-users izq"></i>Accesos<i class="fas fa-chevron-down der"></i></a>
+        <ul>
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Grupos</a>
+          </li>
+
+          <li>
+            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Usuarios</a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="#"><i class="izq fab fa-elementor izq"></i>Categorias</a>
