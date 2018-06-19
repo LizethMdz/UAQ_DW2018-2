@@ -20,22 +20,22 @@
         </ul>
       </li>
       <li>
-        <a href="#"><i class="izq fab fa-elementor izq"></i>Categorias</a>
+        <a href="categorie.php"><i class="izq fab fa-elementor izq"></i>Categorias</a>
       </li>
       <li>
         <a href="#"><i class="izq fab fa-product-hunt izq"></i>Productos<i class="fas fa-chevron-down der"></i></a>
         <ul>
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Productos</a>
+            <a href="product.php"><i class="izq fas fa-level-down-alt"></i>Administrar Productos</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar productos</a>
+            <a href="add_product.php"><i class="izq fas fa-level-down-alt"></i>Agregar productos</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#"><i class="izq fas fa-images izq"></i>Media</a>
+        <a href="media.php"><i class="izq fas fa-images izq"></i>Media</a>
       </li>
       <li>
 

@@ -20,7 +20,78 @@
   }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(1500);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+<div class="panel-control">
+
+ <!--CATEGORIAS-->
+ <div class="tabla media">
+            <div class="tabla-encabezado">
+              <form action="media.php" method="POST" enctype="multipart/form-data">
+             <i class="fas fa-camera table-icon"></i>
+             <p>LISTA DE IMAGENES</p>
+               <input type="file" class="input-media" name="file_upload"  multiple="multiple" >
+
+               <button type="submit" class="btn-enviar" name="submit" class="btn btn-default">
+                Enviar<i class="fas fa-upload table-icon"></i></button>
+             </form>
+
+           </div>
+           <div class="contenedor-tabla">
+           <table border="1px" class="tabla-datos">
+           <thead>
+             <tr>
+               <th>#</th>
+               <th>Imagen</th>
+               <th>Descripción</th>
+               <th>Tipo</th>
+               <th>Acciones</th>
+             </tr>
+           </thead>
+           <tbody>
+             <?php foreach ($media_files as $media_file): ?>
+                <tr>
+                  <td><?php echo count_id();?></td>
+                  <td><img src="uploads/products/<?php echo $media_file['file_name'];?>" width="100px"></td>
+                  <td><?php echo $media_file['file_name'];?></td>
+                  <td><?php echo $media_file['file_type'];?></td>
+                  <td>
+                    <a href="delete_media.php?id=<?php echo (int) $media_file['id'];?>" class=" bt-media">
+                      <span><i class="fas fa-trash-alt"></i></span>
+                   </a>
+                  </td>
+               </tr>
+              <?php endforeach;?>
+           </tbody>
+
+         </table>
+         </div>
+         </div>
+
+</div>
+
+
+
+<!--
      <div class="row">
         <div class="col-md-6">
           <?php echo display_msg($msg); ?>
@@ -80,7 +151,7 @@
           </div>
         </div>
       </div>
-</div>
+</div>-->
 
 
 <?php include_once('layouts/footer.php'); ?>

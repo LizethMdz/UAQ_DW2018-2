@@ -94,6 +94,9 @@ section{
 	box-sizing: border-box;
 	padding: 10px 15px;
 	transition:  .5s;
+	margin-top:70px;
+	margin-bottom: 0px;
+	color: white;
 	width: 340px;
 	background: rgba(0, 140, 194, 0.5);
 }
@@ -206,7 +209,7 @@ section{
 }
 /*
 .header-user .img-user {
- 
+
   width: 45px;
   height:40px;
   top:5px;
@@ -467,7 +470,7 @@ small{
 }
 
 
-.text-condensedLight{ 
+.text-condensedLight{
 
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #9b9b9b;
@@ -501,11 +504,11 @@ small{
  p{
 	margin-left: 10px;
 	font-size: 14px;
-	color: #9b9b9b;
+	color: WHITE;
 	font-weight: bold;
 	display: inline-block;
 }
-.tablas{
+.contenedor-general{
 	background: transparent;
 	margin-left: 2%;
 	height:500px;
@@ -518,9 +521,10 @@ small{
 .tabla-encabezado{
 	height: 55px;
 	width:100%;
-	background:#F5F5F5;
+	background:#0288D1  ;
 	position: absolute;
-	border-bottom: 2px solid #3498DB;
+	border-radius: 2px;
+	border-bottom: 2px solid #00CCFF;
 }
 
 .contenedor-tabla{
@@ -537,6 +541,8 @@ small{
 	position: relative;
 	background: white;
 	overflow: hidden;
+	border:1px solid #DADADA;
+  border-radius: 5px;
 	/*left: 5px;*/
 	display: inline-block;
 }
@@ -552,13 +558,18 @@ table{
 
  td, th{
 	border: 1px solid #dddddd;
-    text-align: left;
     padding: 5px;
-    font-size: 12px;
+		font-size: 14px;
+		text-align: center;
+		color: #566573;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 
 .table-icon{
-	color: #9b9b9b;
+	color:WHITE;
 	font-size: 14px;
 	margin-left: 15px;
 }
@@ -567,4 +578,149 @@ table{
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+/*==============ESTILOS PARA CATEGORIAS=============*/
+.tb{
+	height: 300px;
+	position: relative;
+	top: 10px;
+}
+.categoria{
+	width: 45%;
+}
+
+.izquierda{
+	background: transparent;
+	display: inline-block;
+}
+
+.cont-data{
+	position: absolute;
+	height: 180px;
+	width: 100%;
+	background: white;
+	margin-top: 57px;
+	border-top: none;
+	border-collapse: collapse;
+	border:1px solid #DADADA;
+	border-radius: 5px;
+
+}
+
+.input-categoria{
+	padding: 10px 10px;
+	width: 70%;
+	color: #9b9b9b;
+	margin-left: 12%;
+	margin-top: 40px;
+	outline: none;
+	border-radius: 5px;
+	border-collapse: collapse;
+	font-size: 14px;
+	border: 1px solid #9b9b9b;
+}
+/*Boton de Agregar categoria*/
+.button {
+	color:#fff;
+	display:block;
+	font-size:14px;
+	margin:20px;
+	padding:10px 0;
+	text-align:center;
+	width:180px;
+	margin-left: 12%;
+	text-decoration:none;
+	border-radius: 5px;
+}
+
+button{
+	border:none;
+	cursor: pointer;
+}
+
+button.button span {
+	margin-right:10px;
+
+}
+
+/*Colores*/
+button.button.orange {
+	background:#FF7043  ;
+}
+
+.button.orange:hover{
+	background: #E91E63  ;
+}
+
+/*Botones de Eliminar y Editar*/
+a.btn-ico{
+ background: #00CC33  ;
+ text-align: center;
+ color: white;
+ display:block;
+ width: 20px;
+ margin-left: 30px;
+ padding: 5px 5px;
+font-size:14px;
+text-decoration:none;
+border-radius: 5px;
+}
+
+a.btn-ico:hover{
+	color: white;
+	background:#FFC107 ;
+}
+
+/*======ESTILOS PARA MEDIA============*/
+.media{
+	width: 95%;
+	height: 500px;
+}
+
+
+a.bt-media{
+ text-align: center;
+ color: white;
+ margin-left: 50px;
+ width: 20px;
+ display:block;
+ padding: 5px 5px;
+font-size:14px;
+text-decoration:none;
+border-radius: 5px;
+background: #00CC33  ;
+}
+
+a.bt-media:hover{
+	color: white;
+	background:#FFC107 ;
+}
+
+.input-media{
+	padding: 10px 10px;
+	width: 50%;
+	margin-top:5px;
+	float:right;
+	display: inline-block;
+	color: #ffff;
+	outline: none;
+	border-radius: 5px;
+	border-collapse: collapse;
+	font-size: 14px;
+	border: 1px solid #9b9b9b;
+
+}
+
+.btn-enviar{
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 15%;
+  background:  #ec407a;
+	padding: 5px 20px;
+	color: #ffffff;
+	border-radius: 5px;
+}
+.btn-enviar:hover{
+	  background:  #ff5722;
 }

@@ -28,7 +28,7 @@
             <i class="fas fa-users tile-icon-int"></i>
         </div>
       </article>
-      
+
       <article class="full-width tile">
         <div class="tile-text">
           <span class="text-condensedLight">
@@ -65,12 +65,12 @@
 
       <!--TABLAS-->
 
-      <div class="tablas">
-        <div class="tabla ">
+      <div class="contenedor-general">
+        <div class="tabla">
           <div class="tabla-encabezado">
             <i class="fas fa-th table-icon"></i>
               <p>MAS VENDIDOS</p>
-          
+
           </div>
           <div class="contenedor-tabla">
           <table border="1px" class="tabla-datos">
@@ -92,7 +92,7 @@
           </tbody>
         </table>
           </div>
-         
+
         </div>
         <div class="tabla ">
            <div class="tabla-encabezado">
@@ -126,7 +126,7 @@
        <?php endforeach; ?>
             </tr>
           </tbody>
-            
+
         </table>
           </div>
         </div>
@@ -145,9 +145,9 @@
             </tr>
           </thead>
           <?php foreach ($recent_products as  $recent_product): ?>
-            
+
             <tr>
-              
+
               <td>
                 <a href="edit_product.php?id=<?php echo(int)$recent_product['id'];?>">
                 <?php if($recent_product['media_id'] === '0'): ?>
@@ -157,16 +157,16 @@
               <?php endif;?>
               </a>
             </td>
-              
+
               <td><?php echo remove_junk(first_character($recent_product['name']));?></td>
               <td>$ <?php echo (int)$recent_product['sale_price']; ?></td>
             </tr>
-          
+
           <?php endforeach; ?>
         </table>
           </div>
         </div>
-        
+
       </div>
 
       </div>
