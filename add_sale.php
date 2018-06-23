@@ -37,7 +37,7 @@
   }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
 <div class="row">
   <div class="col-md-6">
     <?php echo display_msg($msg); ?>
@@ -47,7 +47,7 @@
             <span class="input-group-btn">
               <button type="submit" class="btn btn-primary">Búsqueda</button>
             </span>
-            <input type="text" id="sug_input" class="form-control" name="title"  placeholder="Buscar por el nombre del producto">
+            <input type="text" id="sug_input" class="form" name="title"  placeholder="Buscar por el nombre del producto" >
          </div>
          <div id="result" class="list-group"></div>
         </div>
@@ -55,7 +55,6 @@
   </div>
 </div>
 <div class="row">
-
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
