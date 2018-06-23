@@ -5,7 +5,7 @@
    page_require_level(2);
   $products = join_product_table();
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
   <div class="row">
      <div class="col-md-12">
        <?php echo display_msg($msg); ?>
@@ -14,7 +14,7 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
          <div class="pull-right">
-           <a href="add_product.php" class="btn btn-primary">Agragar producto</a>
+           <a href="add_product.php" class="btn btn-primary">Agregar producto</a>
          </div>
         </div>
         <div class="panel-body">
@@ -50,13 +50,9 @@
                 <td class="text-center"> <?php echo remove_junk($product['sale_price']); ?></td>
                 <td class="text-center"> <?php echo read_date($product['date']); ?></td>
                 <td class="text-center">
-                  <div class="btn-group">
-                    <a href="edit_product.php?id=<?php echo (int)$product['id'];?>" class="btn btn-info btn-xs"  title="Editar" data-toggle="tooltip">
-                      <span class="glyphicon glyphicon-edit"></span>
-                    </a>
-                     <a href="delete_product.php?id=<?php echo (int)$product['id'];?>" class="btn btn-danger btn-xs"  title="Eliminar" data-toggle="tooltip">
-                      <span class="glyphicon glyphicon-trash"></span>
-                    </a>
+                  <div class="">
+                    <a href="edit_product.php?id=<?php echo (int)$product['id'];?>" class="btn btn-edit"  title="Editar" data-toggle="tooltip">Editar</a>
+                    <a href="delete_product.php?id=<?php echo (int)$product['id'];?>" class="btn btn-eliminar"  title="Eliminar" data-toggle="tooltip"><i class="fa fa-trash"></i> Trash</a>
                   </div>
                 </td>
               </tr>
