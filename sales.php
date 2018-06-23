@@ -7,7 +7,7 @@
 <?php
 $sales = find_all_sale();
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
 <div class="row">
   <div class="col-md-6">
     <?php echo display_msg($msg); ?>
@@ -19,7 +19,7 @@ $sales = find_all_sale();
         <div class="panel-heading clearfix">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-            <span>Todas la ventas</span>
+            <span>Todas las ventas</span>
           </strong>
           <div class="pull-right">
             <a href="add_sale.php" class="btn btn-primary">Agregar venta</a>
@@ -46,13 +46,9 @@ $sales = find_all_sale();
                <td class="text-center"><?php echo remove_junk($sale['price']); ?></td>
                <td class="text-center"><?php echo $sale['date']; ?></td>
                <td class="text-center">
-                  <div class="btn-group">
-                     <a href="edit_sale.php?id=<?php echo (int)$sale['id'];?>" class="btn btn-warning btn-xs"  title="Edit" data-toggle="tooltip">
-                       <span class="glyphicon glyphicon-edit"></span>
-                     </a>
-                     <a href="delete_sale.php?id=<?php echo (int)$sale['id'];?>" class="btn btn-danger btn-xs"  title="Delete" data-toggle="tooltip">
-                       <span class="glyphicon glyphicon-trash"></span>
-                     </a>
+                  <div class="">
+                    <a href="edit_sale.php?id=<?php echo (int)$sale['id'];?>" class="btn btn-edit"  title="Editar" data-toggle="tooltip">Editar</a>
+                    <a href="delete_sale.php?id=<?php echo (int)$sale['id'];?>" class="btn btn-eliminar"  title="Eliminar" data-toggle="tooltip"><i class="fa fa-trash"></i> Trash</a>
                   </div>
                </td>
              </tr>
