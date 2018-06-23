@@ -40,7 +40,50 @@
    }
  }
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+
+<div class="panel-control" style="background: white;">
+        <div class="form-grupo">
+          <p class="text-titulos">Editar Grupo</p>
+          <form method="post" action="edit_group.php?id=<?php echo (int)$e_group['id'];?>">
+          <p class="text-subtitulos">Nombre del Grupo</p>
+          <input type="name" placeholder="Grupo" class="input-grp" name="group-name" value="<?php echo remove_junk(ucwords($e_group['group_name'])); ?>">
+          <p  class="text-subtitulos">Nivel del Grupo</p>
+          <input type="number" placeholder="Nivel" class="input-grp" name="group-level" value="<?php echo (int)$e_group['group_level']; ?>">
+          <p  class="text-subtitulos">Estado</p>
+          <select class="select-st" name="status">
+            <option <?php if($e_group['group_status'] === '1') echo 'selected="selected"';?> value="1"> Activo </option>
+            <option <?php if($e_group['group_status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
+            <option <?php if($e_group['group_status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
+            </select>
+          <button type="submit" class="btn-e-c" name="update">
+            Cambiar
+          </button>
+        </form>
+        </div>
+     </div>
+
+<!--
 <div class="login-page">
     <div class="text-center">
        <h3>Editar Grupo</h3>
@@ -67,6 +110,6 @@
                 <button type="submit" name="update" class="btn btn-info">Actualizar</button>
         </div>
     </form>
-</div>
+</div>-->
 
 <?php include_once('layouts/footer.php'); ?>

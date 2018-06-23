@@ -52,7 +52,7 @@ if (isset($msg)){
                <input type="file" class="input-media" name="file_upload"  multiple="multiple" >
 
                <button type="submit" class="btn-enviar" name="submit" class="btn btn-default">
-                Enviar<i class="fas fa-upload table-icon"></i></button>
+                Enviar<i class="fas fa-upload table-icon" style="color:#fff;"></i></button>
              </form>
 
            </div>

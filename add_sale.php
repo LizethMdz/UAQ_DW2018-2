@@ -37,7 +37,81 @@
   }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+
+<div class="panel-control">
+        <div class="input-busq">
+          <form method="post" action="ajax.php" autocomplete="off" id="sug-form">
+          <button type="submit" class="btn-buscar">Colocar en Lista</button>
+          <input type="text" id="sug_input"  name="title" placeholder="Buscar por el nombre del producto" class="input-grp" style="margin-left: 0px;">
+          <div id="result" class="list-group">
+            <!--<p class="list-group-item"></p>-->
+          </div>
+          </form>
+        </div>
+        <div class="form-sale">
+          <div class="tabla-encabezado">
+            <i class="far fa-edit table-icon"></i>
+            <p>EDITAR VENTA</p>
+          </div>
+            <div class="contenedor-tabla" style="background: white;">
+          <form method="post" action="add_sale.php">
+          <table border="1px" class="tabla-datos bord">
+          <thead>
+            <tr>
+              <th class="title-enc">Producto</th>
+              <th class="title-enc">Precio</th>
+              <th class="title-enc">Cantidad</th>
+              <th class="title-enc">Total</th>
+              <th class="title-enc">Agregado</th>
+              <th class="title-enc">Acciones</th>
+            </tr>
+          </thead>
+          <tbody  id="product_info"> </tbody>
+          <!--<tbody>
+
+            <tr>
+                 <td>fdfds</td>
+                 <td>fsdfds</td>
+                 <td>ddjskldsd</td>
+                 <td>iojklj</td>
+                 <td>hfghfg</td>
+                 <td colspan="2">
+                  <a href="#" class="btn-ico">
+                    <span><i class="far fa-edit"></i></span>
+                  </a>
+                  <a href="#" class="btn-ico">
+                     <span><i class="fas fa-trash-alt"></i></span>
+                  </a></td>
+              </tr>
+          </tbody>-->
+
+        </table>
+        </form>
+        </div>
+        </div>
+     </div>
+<!--
 <div class="row">
   <div class="col-md-6">
     <?php echo display_msg($msg); ?>
@@ -82,6 +156,6 @@
     </div>
   </div>
 
-</div>
+</div>-->
 
 <?php include_once('layouts/footer.php'); ?>

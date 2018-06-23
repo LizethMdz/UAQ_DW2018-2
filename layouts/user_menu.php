@@ -26,14 +26,14 @@
         <ul>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
+            <a href="sales_report.php"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
+            <a href="monthly_sales.php"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
           </li>
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
+            <a href="daily_sales.php"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
           </li>
         </ul>
       </li>

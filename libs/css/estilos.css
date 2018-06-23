@@ -186,7 +186,8 @@ section{
     letter-spacing: 1px;
     display: inline-block;
     width: 250px;
-     background-color: #16a085;
+     /*background-color: #16a085;*/
+		background: #00487D;
 }
 #header .header-date-up{
   display: inline-block;
@@ -230,6 +231,8 @@ section{
   margin:0px;
 }
 
+
+
 /*SIDEBAR -- MENU DEL COSTADO*/
 
 .contenedor-menu{
@@ -240,9 +243,10 @@ section{
   padding: 65px 0 0;
   height: 100%;
   width: 250px;
-  background: #2a3542;
+  /*background: #2a3542;*/
   border-right: 1px solid #ddd;
   text-align: center;
+	background: #DDF9FF;
   /*width: 15%;
   min-width: 300px;
   margin-top: 0px;
@@ -266,7 +270,8 @@ section{
 }
 .contenedor-menu .menu li a {
   font-size: 15px;
-  color: gray;
+  /*color: gray;*/
+	color: #0072B6;
   display: block;
   padding: 13px 10px;
   background: rgba(0,0,0,0.02);
@@ -504,8 +509,8 @@ small{
  p{
 	margin-left: 10px;
 	font-size: 14px;
-	color: WHITE;
-	font-weight: bold;
+	color: #3458C1 ;
+	/*font-weight: bold;*/
 	display: inline-block;
 }
 .contenedor-general{
@@ -521,14 +526,16 @@ small{
 .tabla-encabezado{
 	height: 55px;
 	width:100%;
-	background:#0288D1  ;
+	/*background:#0288D1  ;*/
+  background:#F5F5F5;
 	position: absolute;
 	border-radius: 2px;
-	border-bottom: 2px solid #00CCFF;
+	/*border-bottom: 2px solid #00CCFF;*/
+  border-bottom: 2px solid #0288D1;
 }
 
 .contenedor-tabla{
-	margin-top: 70px;
+	margin-top: 58px;
 	position: absolute;
 	height: 400px;
 	width: 100%;
@@ -547,16 +554,14 @@ small{
 	display: inline-block;
 }
 table{
-	margin-left:10%;
+	border-collapse: collapse;
 }
 .tabla-datos{
 	background: white;
-    width: 80%;
-    left:10%;
-    border-collapse: collapse;
+    width: 100%;
 }
-
- td, th{
+/*agregue la clase*/
+ .tabla-datos td, th{
 	border: 1px solid #dddddd;
     padding: 5px;
 		font-size: 14px;
@@ -569,7 +574,8 @@ tr:nth-child(even) {
 }
 
 .table-icon{
-	color:WHITE;
+	/*color:WHITE;*/
+  color: #0288D1  ;
 	font-size: 14px;
 	margin-left: 15px;
 }
@@ -703,7 +709,7 @@ a.bt-media:hover{
 	margin-top:5px;
 	float:right;
 	display: inline-block;
-	color: #ffff;
+	color: #3458C1 ;
 	outline: none;
 	border-radius: 5px;
 	border-collapse: collapse;
@@ -724,3 +730,523 @@ a.bt-media:hover{
 .btn-enviar:hover{
 	  background:  #ff5722;
 }
+
+/*ESTILOS USER- Reporte de ventas*/
+
+.rpventas{
+	width: 50%;
+	height: 30%;
+}
+
+.contenedor-fechas{
+	margin-top: 70px;
+	position: absolute;
+	width: 100%;
+	padding: 40px;
+  height: 500px;
+}
+
+.input-fecha{
+	padding: 10px 10px;
+	width: 180px;
+	margin-top:5px;
+	float:left;
+	display: inline-block;
+	color: #9b9b9b;
+	outline: none;
+	border-radius: 5px;
+	border-collapse: collapse;
+	font-size: 14px;
+	border: 1px solid #9b9b9b;
+	text-align:center;
+
+}
+
+.icon-date{
+	display: inline-block;
+	position: relative;
+	width: 38px;
+	height: 38px;
+	float: left;
+	margin-top: 5px;
+	font-size: 20px;
+	text-align: center;
+	background: #F7F7F7;
+	border-collapse: collapse;
+	border: 1px solid #9b9b9b;
+	border-radius: 5px;
+}
+
+span > i.fa-chevron-right{
+	margin-top:10px;
+}
+
+button.button-2{
+	color:#fff;
+	display:block;
+	font-size:14px;
+	padding:10px 0;
+	position: absolute;
+	text-align:center;
+	width:150px;
+	margin-top:70px;
+
+	text-decoration:none;
+	border-radius: 5px;
+}
+
+button.button-2 span {
+	margin-right:10px;
+
+}
+.purple{
+	background:  #6a1b9a ;
+	color:#fff;
+}
+/*===Estilos ventas por fecha y reporte===*/
+
+
+.tabla-reporte{
+	width: 96%;
+	margin: 2%;
+	font-size: 14px;
+	padding:10px;
+	margin-top: 2%;
+	position: relative;
+	border:1px solid #DADADA;
+	border-radius: 5px;
+
+}
+
+
+.tabla-reporte-titulo{
+	margin-left: 2%;
+	margin-top: 10%;
+	color: #9b9b9b;
+	width: 96%;
+	text-align: right;
+	position: relative;
+	font-size: 14px;
+	border:1px solid #DADADA;
+	border-radius: 5px;
+}
+
+/*===PERFIL====*/
+.contenedor-perfil{
+	width: 30%;
+	top:5%;
+	left:5%;
+	height: 250px;
+	position: absolute;
+}
+
+.img-perfil{
+	margin:0px;
+	height: 200px;
+	width: 100%;
+	background: #FF7857;
+	border-radius: 2px;
+}
+
+.text-perfil{
+	background:white;
+	top:80%;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	border-radius: 2px;
+
+}
+
+a.icon-perfil{
+	text-decoration: none;
+	color: #4A7CC8;
+}
+
+a.icon-perfil:hover{
+	color: #51ADED;
+}
+.text-perfil i{
+	margin-left: 20px;
+	margin-right: 5px;
+	margin-top: 20px;
+	font-size: 14px
+
+}
+
+/*=====FORMULARIO DE CAMBIO DE CONTRASEÑA*/
+
+.form-ch-pass{
+	width: 30%;
+	height: 330px;
+	position: absolute;
+	top:10%;
+	background: #F9F9F9;
+	margin-left:350px;
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-ch-p{
+	padding: 10px;
+	margin-left:25px;
+	width: 245px;
+	border: 1px solid #3458C1;
+	border-radius: 2px;
+	border-collapse: collapse;
+}
+
+
+/*AGREGAR GRUPO*/
+
+.form-grupo{
+	width: 30%;
+	height: 450px;
+	position: absolute;
+	top:10%;
+	background: #F9F9F9;
+	margin-left:350px;
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-grp{
+	padding: 10px;
+	margin-left:25px;
+	width: 245px;
+	border: 1px solid #3458C1;
+	border-radius: 2px;
+	border-collapse: collapse;
+}
+
+.select-st{
+	padding: 10px;
+	margin-left:25px;
+	color: #9b9b9b;
+	width: 270px;
+	border: 1px solid #3458C1;
+	border-radius: 2px;
+	border-collapse: collapse;
+}
+
+.contenedor-tabla.add-user{
+	width: 90%;
+	margin-left: 5%;
+	height: 700px;
+}
+
+/*AGREGAR USUARIO*/
+.add-user{
+	border-radius: 2px;
+	border:1px solid #DADADA;
+	background: white;
+}
+.form-user{
+	width: 100%;
+	height: 600px;
+	top:56px;
+	position: absolute;
+	background: transparent;
+}
+
+.form-add-user{
+	width: 90%;
+	height: 500px;
+	position: absolute;
+	top:10%;
+	background: #F9F9F9;
+	margin-left:50px;
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.size{
+	width: 500px;
+}
+
+/*AGREGAR VENTA*/
+.form-sale{
+	background: white;
+	width: 90%;
+	height: 500px;
+	position: relative;
+	top:4%;
+	margin-left: 50px;
+
+}
+
+thead{
+	background:transparent;
+}
+
+th.title-enc{
+	color: black;
+}
+th{
+	color: black;
+}
+
+.input-busq{
+	margin-top:2%;
+	margin-left: 50px;
+	width: 50%;
+	padding:10px 5px 10px 5px;
+
+}
+.bord{
+	margin-top:5%;
+	padding: 5px;
+}
+
+.btn-buscar{
+	background:#FCC108  ;
+	height: 35px;
+	width: 30%;
+	color: white;
+	outline: none;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+/*ESTILOS GENERALES PARA LOS PARRAFOS*/
+
+.text-titulos{
+	color: #3458C1;
+	text-align: center;
+	margin-left:25px;
+	font-size: 24px;
+
+}
+
+.text-subtitulos{
+	margin-top: 15px;
+	margin-left: 25px;
+    color: #3458C1;
+    font-size: 14px;
+
+}
+
+/*editar categoria*/
+
+.e-categoria{
+	height: 250px;
+}
+.btn-e-c{
+	padding: 10px;
+    margin-left: 25px;
+    margin-top: 25px;
+    background: #5BC0DE;
+    color:#fff
+}
+.btn-e-c:hover{
+	background: #0288D1;
+}
+
+/*editar cuenta*/
+.img-up{
+	float: left;
+	margin-top: 40px;
+	margin-left: 20px;
+
+}
+.direccion{
+	float: right;
+}
+
+.tamano{
+	font-size: 14px;
+	width: 56%;
+}
+.pos{
+	display: inline-block;
+}
+
+.btn-ch-c{
+	text-decoration: none;
+	background: #FA0922  ;
+	padding: 10px;
+	width: 40%;
+	color: white;
+	float:right;
+	position: absolute;
+	margin-left: 30%;
+	margin-top: 25px;
+	border-radius: 5px;
+	font-size: 12px;
+	text-align: center;
+}
+.btn-ch-c:hover{
+	background: #DD051C;
+}
+
+
+.altura{
+	height: 350px;
+}
+
+.input-e{
+	padding: 10px;
+	margin-left:25px;
+	border: 1px solid #9B9B9B;
+	border-radius: 2px;
+	border-collapse: collapse;
+	width: 410px;
+	display: block;
+}
+/*editar usuario*/
+
+
+.arriba{
+margin-left: 20%;
+position: relative;
+display: inline-block;
+height: 500px;
+}
+
+.izqui{
+	height: 500px;
+}
+
+.amplitud{
+	height: 500px;
+	width: 45%;
+}
+
+.select-st-u{
+	display: block;
+	padding: 10px;
+	margin-left:25px;
+	color: #9b9b9b;
+	width: 430px;
+	border: 1px solid #9b9b9b;
+	border-radius: 2px;
+	border-collapse: collapse;
+}
+
+.btn-ch-password{
+	padding: 10px;
+    margin-left: 25px;
+    margin-top: 25px;
+    background: #5BC0DE;
+    color:#fff;
+    border-radius: 5px;
+}
+.btn-ch-password:hover{
+	background: #0288D1;
+
+}
+
+.btn-actu{
+	margin-left: 25px;
+}
+
+/*editar producto*/
+
+.alt{
+	height: 500px;
+}
+
+.input-product{
+	display: block;
+	padding: 10px;
+	border:1px solid #9b9b9b;
+	width: 400px;
+	margin-left:25px;
+	margin-top: 10px;
+	color: #9b9b9b;
+}
+
+.icon-pro{
+	position: relative;
+	display:block;
+	border: 1px solid #0288D1;
+	color: #0288D1;
+	padding:10px;
+}
+
+.lineal{
+	display: inline-block;
+	width: 150px;
+	margin:0px;
+}
+
+.text-icon{
+	background: white;
+	color:#9b9b9b;
+	padding:10px;
+	border: 1px solid gray;
+	margin:0px;
+	font-size: 14px;
+}
+
+/*editar ventas*/
+.sales{
+	width: 95%;
+	height: 400px;
+}
+
+table.tabla-sales{
+	margin:10px 50px 20px 50px;
+	border-collapse: collapse;
+	border:1px solid #9b9b9b;
+
+}
+
+.input-sales{
+	padding: 5px;
+	width: 120px;
+}
+
+.btn-sales{
+	padding:10px;
+	margin-left: 30px;
+	background: #09A9F9  ;
+	border-radius: 2px;
+	color: white;
+}
+
+.btn-sales:hover{
+	background: #1362FF  ;
+}
+
+.enlace-sales{
+	text-decoration: none;
+	padding:10px;
+	background: #00CC33;
+	color: white;
+	float: right;
+	margin-top:10px;
+	margin-right: 10px;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+.enlace-sales:hover{
+	background: #60F909;
+}
+	/*AJAX*/
+
+	.list-group{
+		margin-left: 165px;
+		width: 240px;
+		padding:10px;
+		background: white;
+		border-radius: 2px;
+		border: 1px solid #3458C1;
+	}
+
+	.list-group-item{
+		color: #3458C1;
+		font-size: 14px;
+	}
+
+	.btn-agregar{
+		color: white;
+		background: #25B7D3;
+		padding: 5px;
+		border-radius: 2px;
+	}
+
+	.btn-agregar:hover{
+		background: #0491AC;
+	}

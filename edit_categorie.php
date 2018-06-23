@@ -35,8 +35,45 @@ if(isset($_POST['edit_cat'])){
   }
 }
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
 
+</div>
+
+<div class="panel-control" style="background: white;">
+
+        <div class="form-grupo e-categoria">
+          <p class="text-titulos">Editando <?php echo remove_junk(ucfirst($categorie['name']));?></p>
+          <form method="post" action="edit_categorie.php?id=<?php echo (int)$categorie['id'];?>">
+          <p class="text-subtitulos">Nuevo Nombre</p>
+          <input type="text" class="input-grp" name="categorie-name" value="<?php echo remove_junk(ucfirst($categorie['name']));?>">
+
+          <button name="edit_cat" class="btn-e-c" type="submit">
+            Actualizar Categoria
+          </button>
+        </form>
+        </div>
+</div>
+
+
+<!--
 <div class="row">
    <div class="col-md-12">
      <?php echo display_msg($msg); ?>
@@ -59,7 +96,7 @@ if(isset($_POST['edit_cat'])){
        </div>
      </div>
    </div>
-</div>
+</div>-->
 
 
 

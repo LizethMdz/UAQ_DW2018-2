@@ -42,7 +42,54 @@
    }
  }
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+
+<div class="panel-control" style="background: white;">
+        <div class="form-grupo">
+          <p style="color: #3458C1; text-align: center; margin-left:5px; font-size: 24px;
+          ">Agregar nuevo Grupo de Usuarios</p>
+          <form action="add_group.php" method="post">
+          <p style="margin-top: 15px; margin-left: 25px;
+          color: #3458C1; font-size: 14px;">Nombre del Grupo</p>
+          <input type="name" placeholder="Grupo" class="input-grp" name="group-name">
+          <p style="margin-left: 25px;
+          color: #3458C1; font-size: 14px;">Nivel del Grupo</p>
+          <input type="number" placeholder="Nivel" class="input-grp" name="group-level">
+          <p style="margin-left: 25px;
+          color: #3458C1; font-size: 14px;">Estado</p>
+          <select class="select-st" name="status">
+              <option value="1">Activo</option>
+              <option value="0">Inactivo</option>
+            </select>
+          <button style="padding: 10px;
+          margin-left: 25px; margin-top: 25px; background: #3458C1; color:#fff;" type="submit" name="add">
+            Cambiar
+          </button>
+        </form>
+        </div>
+     </div>
+<!--
 <div class="login-page">
     <div class="text-center">
        <h3>Agregar nuevo grupo de usurios</h3>
@@ -68,6 +115,6 @@
                 <button type="submit" name="add" class="btn btn-info">Guardar</button>
         </div>
     </form>
-</div>
+</div>-->
 
 <?php include_once('layouts/footer.php'); ?>

@@ -44,12 +44,30 @@
  }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-12">
-    <?php echo display_msg($msg); ?>
-  </div>
+<?php include_once('layouts/header2.php'); ?>
+
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
 </div>
+
+<!---->
   <div class="row">
   <div class="col-md-9">
       <div class="panel panel-default">
@@ -130,5 +148,4 @@
       </div>
     </div>
   </div>
-
 <?php include_once('layouts/footer.php'); ?>

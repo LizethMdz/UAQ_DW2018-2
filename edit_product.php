@@ -50,12 +50,84 @@ if(!$product){
  }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-12">
-    <?php echo display_msg($msg); ?>
-  </div>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
 </div>
+
+<div class="panel-control" style="background: transparent;">
+        <div class="tabla media alt">
+          <form method="post" action="edit_product.php?id=<?php echo (int)$product['id'] ?>">
+          <div class="tabla-encabezado">
+            <i class="far fa-edit table-icon"></i>
+            <p>EDITAR PRODUCTO</p>
+          </div>
+
+          <div class="contenedor-tabla">
+            <p style="color:#3458C1 ;  font-size: 14px; margin-left: 25px; display: block;">Nombre del Producto</p>
+            <i class="fas fa-th-large icon-pro" style="margin-left: 25px;"></i>
+            <input type="text" class="input-product" style="display: inline-block; margin-left: 0px;"
+            name="product-title" value="<?php echo remove_junk($product['name']);?>">
+            <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Categoria</p>
+            <select name="product-categorie"  class="input-product">
+              <option value="">Selecciona una Categoria</option>
+              <?php  foreach ($all_categories as $cat): ?>
+              <option value="<?php echo (int)$cat['id']; ?>" <?php if($product['categorie_id'] === $cat['id']): echo "selected"; endif; ?> >
+                  <?php echo remove_junk($cat['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+            <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Imagen del producto</p>
+            <select name="product-photo" class="input-product">
+              <option value="">Sin imagen</option>
+              <?php  foreach ($all_photo as $photo): ?>
+                <option value="<?php echo (int)$photo['id'];?>" <?php if($product['media_id'] === $photo['id']): echo "selected"; endif; ?> >
+                  <?php echo $photo['file_name'] ?></option>
+              <?php endforeach; ?>
+            </select>
+
+            <p style="color:#3458C1 ; font-size: 14px; margin-left: 130px;">Cantidad</p>
+            <p style="color:#3458C1 ; font-size: 14px; margin-left:130px;">Precio de Compra</p>
+            <p style="color:#3458C1 ; font-size: 14px; margin-left: 140px;">Precio de venta</p>
+            <br>
+            <i class="fas fa-cart-plus icon-pro" style="margin-left: 25px;"></i>
+
+            <input type="text" class="input-product lineal" name="product-quantity" value="<?php echo remove_junk($product['quantity']); ?>">
+
+            <i class="fas fa-dollar-sign icon-pro"></i>
+            <input type="number" class="input-product lineal" name="buying-price" value="<?php echo remove_junk($product['buy_price']);?>">
+            <p class="text-icon">.00</p>
+            <i class="fas fa-dollar-sign icon-pro"></i>
+            <input type="text" class="input-product lineal" name="saleing-price" value="<?php echo remove_junk($product['sale_price']);?>">
+
+             <p class="text-icon">.00</p>
+
+             <button type="submit" name="product" class="button bg-success btn-actu">
+            <!--<a href="#">-->
+                <span><i class="fas fa-pen-square"></i></span>Actualizar
+            </button>
+          </form>
+          </div>
+        </div>
+     </div>
+
+<!--
   <div class="row">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -143,5 +215,5 @@ if(!$product){
         </div>
       </div>
   </div>
-
+-->
 <?php include_once('layouts/footer.php'); ?>
