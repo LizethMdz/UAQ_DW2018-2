@@ -43,12 +43,69 @@ if(!$sale){
   }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-6">
-    <?php echo display_msg($msg); ?>
-  </div>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
 </div>
+
+<div class="panel-control" style="background: transparent;">
+        <div class="tabla media sales">
+          <div class="tabla-encabezado">
+            <i class="far fa-edit table-icon"></i>
+            <p>TODAS LAS VENTAS</p>
+            <a href="sales.php" class="enlace-sales">Ver todas las ventas</a>
+          </div>
+
+          <div class="contenedor-tabla sales">
+            <p style="margin-top: 15px; margin-left: 50px;
+          color: #9BA8C5; font-size: 20px;">Informacion del la venta</p>
+            <table class="tabla-sales" cellpadding="5" >
+              <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th>Fecha</th>
+                <th width="30%">Acción</th>
+                  </thead>
+            <tbody>
+              <tr>
+                <form method="post" action="edit_sale.php?id=<?php echo (int)$sale['id']; ?>">
+                <td style="height: 50px;"><input type="text" class="input-sales" name="title" value="<?php echo remove_junk($product['name']); ?>" ></td>
+                <td style="height: 50px;"><input type="text" class="input-sales" name="quantity" value="<?php echo (int)$sale['qty']; ?>"></td>
+                <td style="height: 50px;"><input type="text" class="input-sales" name="price" value="<?php echo remove_junk($product['sale_price']); ?>"></td>
+                <td style="height: 50px;"><input type="text" class="input-sales" name="total" value="<?php echo remove_junk($sale['price']); ?>"></td>
+                <td style="height: 50px;"><input type="date" class="input-sales" name="date" data-date-format="" value="<?php echo remove_junk($sale['date']); ?>"></td>
+                <td style="height: 50px;"><button type="submit" name="update_sale" class="btn-sales">Actualizar</button></td>
+              </form>
+              </tr>
+
+            </tbody>
+            </table>
+          </div>
+        </div>
+     </div>
+
+
+<!--
 <div class="row">
 
   <div class="col-md-12">
@@ -103,6 +160,6 @@ if(!$sale){
   </div>
   </div>
 
-</div>
+</div>-->
 
 <?php include_once('layouts/footer.php'); ?>

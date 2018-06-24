@@ -15,6 +15,7 @@ function real_escape($str){
 /*--------------------------------------------------------------*/
 function remove_junk($str){
   $str = nl2br($str);
+  /*Traduccion de comilla doble y etiquetas*/
   $str = htmlspecialchars(strip_tags($str, ENT_QUOTES));
   return $str;
 }
@@ -23,6 +24,7 @@ function remove_junk($str){
 /*--------------------------------------------------------------*/
 function first_character($str){
   $val = str_replace('-'," ",$str);
+  /*Para convertir la primera letra en mayuscula*/
   $val = ucfirst($val);
   return $val;
 }

@@ -9,17 +9,18 @@
    if(isset($_POST['product_name']) && strlen($_POST['product_name']))
    {
      $products = find_product_by_title($_POST['product_name']);
+
      if($products){
         foreach ($products as $product):
-           $html .= "<li class=\"list-group-item\">";
+           $html .= "<h4 class=\"list-group-item\">";
            $html .= $product['name'];
-           $html .= "</li>";
+           $html .= "</h4>";
          endforeach;
       } else {
 
-        $html .= '<li onClick=\"fill(\''.addslashes().'\')\" class=\"list-group-item\">';
+        $html .= '<h4 onClick=\"fill(\''.addslashes().'\')\" class=\"list-group-item\">';
         $html .= 'No encontrado';
-        $html .= "</li>";
+        $html .= "</h4>"; /*li*/
 
       }
 
@@ -48,10 +49,10 @@
           $html  .= "<input type=\"text\" class=\"form-control\" name=\"total\" value=\"{$result['sale_price']}\">";
           $html  .= "</td>";
           $html  .= "<td>";
-          $html  .= "<input type=\"date\" class=\"form-control datePicker\" name=\"date\" data-date data-date-format=\"yyyy-mm-dd\">";
+          $html  .= "<input type=\"date\" class=\"form-control datePicker\" name=\"date\" data-date-format=\"yyyy-mm-dd\">";
           $html  .= "</td>";
           $html  .= "<td>";
-          $html  .= "<button type=\"submit\" name=\"add_sale\" class=\"btn btn-primary\">Agregar</button>";
+          $html  .= "<button type=\"submit\" name=\"add_sale\" class=\"btn-agregar\">Agregar</button>";
           $html  .= "</td>";
           $html  .= "</tr>";
 

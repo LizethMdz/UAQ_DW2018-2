@@ -64,7 +64,87 @@ if(isset($_POST['update-pass'])) {
 }
 
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+
+<div class="panel-control" style="background: white;">
+        <div class="tabla categoria arriba" style="margin-left: 40px;">
+          <div class="tabla-encabezado">
+            <i class="fas fa-user-tie table-icon"></i>
+              <p>ACTUALIZA CUENTA: <?php echo remove_junk(ucwords($e_user['name'])); ?></p>
+
+          </div>
+
+          <div class="cont-data izqui">
+            <p class="text-subtitulos">Nombres</p>
+            <input type="name" name="name" class="input-e" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
+            <p class="text-subtitulos">Usuario</p>
+            <input type="text" name="username" class="input-e" value="<?php echo remove_junk(ucwords($e_user['username'])); ?>">
+            <p class="text-subtitulos">Rol de Usuario</p>
+          <select class="select-st-u" name="level" style="margin-top: 10px;">
+            <?php foreach ($groups as $group ):?>
+             <option <?php if($group['group_level'] === $e_user['user_level']) echo 'selected="selected"';?> value="<?php echo $group['group_level'];?>"><?php echo ucwords($group['group_name']);?></option>
+          <?php endforeach;?>
+
+            </select>
+
+            <p class="text-subtitulos">Estado</p>
+          <select class="select-st-u" name="" style="margin-top: 10px;">
+            <option <?php if($e_user['status'] === '1') echo 'selected="selected"';?>value="1">Activo</option>
+            <option <?php if($e_user['status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
+            </select>
+
+            <button type="submit" name="" class="button orange btn-actu">
+                <span><i class="fas fa-pen-square"></i></span>Actualizar
+            </button>
+          </div>
+
+        </div>
+
+        <!--CAMBIO DE CONTRASEÑA -->
+        <div class="tabla categoria amplitud">
+           <div class="tabla-encabezado">
+            <i class="fas fa-key table-icon"></i>
+              <p>CAMBIAR <?php echo remove_junk(ucwords($e_user['name'])); ?> CONTRASEÑA</p>
+          </div>
+          <div class="contenedor-tabla">
+
+          <form action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" method="post">
+          <p class="text-subtitulos">Contraseña</p>
+          <input type="password" class="input-e" name="password" placeholder="Introduce la nueva Contraseña">
+
+
+          <button type="submit" name="update-pass" class="btn-ch-password">
+            Cambiar
+          </button>
+
+
+
+        </form>
+        </div>
+        </div>
+     </div>
+
+<!--
  <div class="row">
    <div class="col-md-12"> <?php echo display_msg($msg); ?> </div>
   <div class="col-md-6">
@@ -106,8 +186,9 @@ if(isset($_POST['update-pass'])) {
         </form>
        </div>
      </div>
-  </div>
+  </div>-->
   <!-- Change password form -->
+  <!--
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -130,5 +211,5 @@ if(isset($_POST['update-pass'])) {
     </div>
   </div>
 
- </div>
+</div>-->
 <?php include_once('layouts/footer.php'); ?>

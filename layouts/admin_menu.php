@@ -4,38 +4,42 @@
       <li><a href="#">
         <img src="libs/images/manage.png" width="100px"></a>
       </li>
+
       <li>
         <a href="admin.php"><i class="izq fas fa-home izq"></i>Panel de Control</a>
+      </li>
+      <li>
+        <a href="profile.php?id=<?php echo (int)$user['id'];?>"><i class="izq fas fa-user-circle izq"></i>Perfil</a>
       </li>
       <li>
         <a href="#"><i class="izq fas fa-users izq"></i>Accesos<i class="fas fa-chevron-down der"></i></a>
         <ul>
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Grupos</a>
+            <a href="group.php"><i class="izq fas fa-level-down-alt"></i>Administrar Grupos</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Usuarios</a>
+            <a href="users.php"><i class="izq fas fa-level-down-alt"></i>Administrar Usuarios</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#"><i class="izq fab fa-elementor izq"></i>Categorias</a>
+        <a href="categorie.php"><i class="izq fab fa-elementor izq"></i>Categorias</a>
       </li>
       <li>
         <a href="#"><i class="izq fab fa-product-hunt izq"></i>Productos<i class="fas fa-chevron-down der"></i></a>
         <ul>
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Productos</a>
+            <a href="product.php"><i class="izq fas fa-level-down-alt"></i>Administrar Productos</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar productos</a>
+            <a href="add_product.php"><i class="izq fas fa-level-down-alt"></i>Agregar productos</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#"><i class="izq fas fa-images izq"></i>Media</a>
+        <a href="media.php"><i class="izq fas fa-images izq"></i>Media</a>
       </li>
       <li>
 
@@ -43,11 +47,11 @@
         <ul>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
+            <a href="sales.php"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
+            <a href="add_sale.php"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
           </li>
         </ul>
       </li>
@@ -57,18 +61,20 @@
         <ul>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
+            <a href="sales_report.php"><i class="izq fas fa-level-down-alt"></i>Ventas por fecha</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
+            <a href="monthly_sales.php"><i class="izq fas fa-level-down-alt"></i>Ventas Mensuales</a>
           </li>
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
+            <a href="daily_sales.php"><i class="izq fas fa-level-down-alt"></i>Ventas Diarias</a>
           </li>
         </ul>
       </li>
-
+      <li>
+        <a href="edit_account.php"><i class="izq fas fa-cogs izq"></i>Configuración</a>
+      </li>
       <li>
         <a href="logout.php"><i class="fas fa-sign-out-alt izq"></i>Salir</a></li>
       <li>

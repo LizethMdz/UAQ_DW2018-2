@@ -9,6 +9,7 @@
 	<title>
 	Sistema de Inventario</title>
   <link rel="stylesheet" href="libs/css/estilos.css"/>
+  
     <!--Enlace de los iconos-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
@@ -21,12 +22,13 @@
             <?php date_default_timezone_set("America/Mexico_City"); echo date("d/m/Y  h:i:s");?>
             </div>
              <div class="header-user">
-              <!--<div class="img-user"></div>-->
+
                 <img src="uploads/users/<?php echo $user['image'];?>" alt="user-image"class="img-user">
-              
+
               Usuario: <?php echo $user['name']; ?>
-              
+
             </div>
+
       </header>
 
 

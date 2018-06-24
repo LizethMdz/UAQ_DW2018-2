@@ -1,4 +1,4 @@
-
+$('#result').fadeOut();
 function suggetion() {
 
      $('#sug_input').keyup(function(e) {
@@ -6,7 +6,7 @@ function suggetion() {
          var formData = {
              'product_name' : $('input[name=title]').val()
          };
-
+        //console.log(formData);
          if(formData['product_name'].length >= 1){
 
            // process the form
@@ -20,7 +20,7 @@ function suggetion() {
                .done(function(data) {
                    //console.log(data);
                    $('#result').html(data).fadeIn();
-                   $('#result li').click(function() {
+                   $('#result h4').click(function() {
 
                      $('#sug_input').val($(this).text());
                      $('#result').fadeOut(500);
@@ -56,11 +56,11 @@ function suggetion() {
             encode      : true
         })
             .done(function(data) {
-                //console.log(data);
+                console.log(data);
                 $('#product_info').html(data).show();
                 total();
-                $('.datePicker').datepicker('update', new Date());
-
+              /*  $('.datePicker').datepicker('update', new Date());
+                */
             }).fail(function() {
                 $('#product_info').html(data).show();
             });
@@ -75,23 +75,19 @@ function suggetion() {
     });
   }
 
+
+
   $(document).ready(function() {
 
-    //tooltip
-    $('[data-toggle="tooltip"]').tooltip();
-
-    $('.submenu-toggle').click(function () {
-       $(this).parent().children('ul.submenu').toggle(200);
-    });
     //suggetion for finding product names
     suggetion();
     // Callculate total ammont
     total();
-
+    /*
     $('.datepicker')
         .datepicker({
             format: 'yyyy-mm-dd',
             todayHighlight: true,
             autoclose: true
-        });
+        });*/
   });

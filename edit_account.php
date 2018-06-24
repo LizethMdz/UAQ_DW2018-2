@@ -42,11 +42,84 @@
     }
   }
 ?>
-<?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-12">
-    <?php echo display_msg($msg); ?>
-  </div>
+<?php include_once('layouts/header2.php'); ?>
+
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
+
+<div class="panel-control" >
+        <div class="tb categoria izquierda" style="margin-left: 40px;">
+          <div class="tabla-encabezado">
+            <i class="fas fa-camera-retro table-icon"></i>
+              <p>Cambiar Foto</p>
+
+          </div>
+
+          <div class="cont-data direccion">
+          <div class="img-up">
+             <img  alt="user" width="100px" height="100px" style="border-radius: 50%;"
+             src="uploads/users/<?php echo $user['image'];?>">
+          </div>
+          <form action="edit_account.php" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="file_upload" class="input-categoria tamano">
+            <input type="hidden" name="user_id">
+            <button type="submit" name="submit" class="button orange pos">
+            <!--<a href="#">-->
+                <span><i class="fas fa-pen-square"></i></span>Cambiar
+            </button>
+          </form>
+          </div>
+
+        </div>
+
+
+        <div class="tabla categoria altura">
+           <div class="tabla-encabezado">
+            <i class="fas fa-user-edit table-icon"></i>
+              <p>EDITAR MI CUENTA</p>
+          </div>
+          <div class="contenedor-tabla">
+
+          <form method="post" action="edit_account.php?id=<?php echo (int)$user['id'];?>">
+          <p style="margin-top: 15px; margin-left: 25px;
+          color: #9BA8C5; font-size: 14px; font-weight: bold;">Nombres</p>
+          <input type="name" class="input-e" name="name" value="<?php echo remove_junk(ucwords($user['name'])); ?>">
+          <p style="margin-top: 15px; margin-left: 25px;
+          color: #9BA8C5; font-size: 14px; font-weight: bold;">Usuario</p>
+          <input type="text" class="input-e ed-user" name="username" value="<?php echo remove_junk(ucwords($user['username'])); ?>">
+
+          <button style="padding: 10px;
+          margin-left: 25px; margin-top: 25px; background: #5BC0DE; color:#fff; border-radius: 5px;" type="submit" name="update">
+            Actualizar
+          </button>
+
+          <a href="change_password.php" class="btn-ch-c">Cambiar Contraseña</a>
+
+        </form>
+        </div>
+        </div>
+     </div>
+
+<!--
   <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -99,7 +172,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 
 <?php include_once('layouts/footer.php'); ?>

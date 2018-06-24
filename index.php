@@ -5,19 +5,18 @@
 ?>
 
 <?php include_once('layouts/header2.php'); ?>
-<div class="fondo"></div>
     <!--Nav-->
   <nav>
     <div class="navbar-top">
       <a class="navbar-title" href="#">SIST-INVENT</a>
     </div>
   </nav>
-  
- <?php 
+
+ <?php
  if (isset($msg)){
- ?> 
+ ?>
 <div class="alerta" >
-  <?php 
+  <?php
   echo display_msg($msg); ?>
   <script src="jquery/jquery-3.3.1.min.js"></script>
   <script>
@@ -27,7 +26,7 @@
             },1000);
         });
   </script>
-<?php 
+<?php
   }
  ?>
 
