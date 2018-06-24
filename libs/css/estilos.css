@@ -5,15 +5,16 @@ body{
   overflow-y: auto;
   height: 100%;
   width: 100%;
-  background: #F1F2F7;
+  /*background: #F1F2F7;*/
 }
+
 .navbar-top{
 	background: transparent;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	height: 5vh;
 	text-align: center;
 	padding: 1vh 1vh;
-
+  z-index: -1;
 
 }
 
@@ -208,19 +209,6 @@ section{
   background: transparent;
   position: relative;
 }
-/*
-.header-user .img-user {
-
-  width: 45px;
-  height:40px;
-  top:5px;
-  color: #9b9b9b;
-  border-radius: 50%;
-  margin:0px;
-  background: #9b9b9b;
-  position: relative;
-}*/
-
 .img-user {
   width: 45px;
   height:38px;
@@ -246,18 +234,9 @@ section{
   /*background: #2a3542;*/
   border-right: 1px solid #ddd;
   text-align: center;
-	background: #DDF9FF;
-  /*width: 15%;
-  min-width: 300px;
-  margin-top: 0px;
-  display: inline-block;
+	background: white;
   font-family:'Roboto', sans-serif;
-  line-height: 18px;
-  margin-right: 2%;
-  position: fixed;
-  height: 95%;*/
-
-
+	overflow:auto;
 }
 .contenedor-menu .menu{
   width: 100%;
@@ -303,7 +282,7 @@ section{
 
 .contenedor-menu .menu li a img{
 	text-align: center;
-	padding-left: 20%;
+	padding-left: 15%;
 }
 
 .contenedor-menu .menu ul {
@@ -315,94 +294,20 @@ section{
 }
 
 
-/*
-a{
-  color #777;
-  text-decoration: none;
-}*/
-/**
-.sidebar {
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  padding: 65px 0 0;
-  height: 100%;
-  width: 250px;
-  background: #2a3542;
-  border-right: 1px solid #ddd;
-  text-align: center;
-}**/
-/*************************************************
-.sidebar ul li:hover,.submenu ul li:hover{
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}.sidebar ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}.sidebar ul li {
-  display: block;
-}.sidebar ul li:hover,ul.submenu{
-  background-color:#35404d;
-}.sidebar ul li a:hover {
-  color: white;
-}.sidebar ul li a,ul.submenu li a {
-  color: #aeb2b7;
-  display: block;
-  height: 45px;/*AGREGADA
-  overflow: hidden;
-  margin-top:1%;
-  position: relative;
-  white-space: nowrap;
-  text-decoration: none;
-  text-align: left;
-}.sidebar ul li a span,.sidebar ul li i{
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-shadow: 0 1px rgba(0,0,0, 1);
-}.sidebar ul li a i{
-  color: #aeb2b7;
-  padding: 15px 22px;
-  text-align: center;
-}ul.submenu{
-  display: none;
-  position: relative;
-}ul.submenu li a:hover{
-  background-color:#35404d;
-}ul.submenu li a {
-  padding-left: 45px;
-}ul.submenu li:before{
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 1;
-  left: 25px;
-  top: 0;
-  bottom: 0;
-  border: 1px dotted #d7d7d7;
-  border-width: 0 0 0 1px;
-}ul.submenu li a:before{
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 7px;
-  left: 25px;
-  top: 18px;
-  border-top: 1px dotted #d7d7d7;
-}
-***********************************************/
+
+/************************************************/
 /*INDEX CONTENEDOR*/
 .contenido{
 	background: #EEEEEE;
-	border:1px solid white;
-	border-radius: 4%;
+	border:1px solid #dadada;
+	border-radius: 5px;
 	position: relative;
 	width: 79%;
-	height: 65px;
+	height: 250px;
 	left: 250px;
 	text-align: center;
+	font-size: 40px;
+	color: #2e6da4;
 	top:65px;
 	margin: 1% 1%;
 }
@@ -506,6 +411,7 @@ small{
 }
 
 /*=======TABLAS PANEL===========*/
+
  p{
 	margin-left: 10px;
 	font-size: 14px;
@@ -972,7 +878,8 @@ a.icon-perfil:hover{
 	position: relative;
 	top:4%;
 	margin-left: 50px;
-
+  border-radius: 2px;
+  border:1px solid #dadada;
 }
 
 thead{

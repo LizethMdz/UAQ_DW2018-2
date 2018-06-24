@@ -41,7 +41,7 @@ if (isset($msg)){
  ?>
 
 </div>
-<div class="panel-control">
+<div class="panel-control" style="background:#F1F2F7;">
 
  <!--CATEGORIAS-->
  <div class="tabla media">

@@ -201,4 +201,4 @@ $results = '';
   ?>
 </body>
 </html>-->
-<?php if(isset($db)) { $db->db_disconnect(); } ?>
+<?php include_once('layouts/footer.php'); ?>

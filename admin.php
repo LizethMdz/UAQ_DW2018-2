@@ -147,20 +147,20 @@
           <?php foreach ($recent_products as  $recent_product): ?>
 
             <tr>
-
-              <td>
+              <td style="background:#c2f1ff ;">
                 <a href="edit_product.php?id=<?php echo(int)$recent_product['id'];?>">
-                <?php if($recent_product['media_id'] === '0'): ?>
-                    <img class="img-avatar" src="uploads/products/no_image.jpg" alt="">
-                  <?php else: ?>
-                   <img class="img-avatar" src="uploads/products/<?php echo $recent_product['image'];?>" alt="" />
-              <?php endif;?>
-              </a>
-            </td>
+                  <?php if($recent_product['media_id'] === '0'): ?>
+                        <img class="img-avatar" src="uploads/products/no_image.jpg" alt="">
+                      <?php else: ?>
+                       <img class="img-avatar" src="uploads/products/<?php echo $recent_product['image'];?>" alt="" />
+                  <?php endif;?>
+                </a>
+              </td>
 
               <td><?php echo remove_junk(first_character($recent_product['name']));?></td>
               <td>$ <?php echo (int)$recent_product['sale_price']; ?></td>
             </tr>
+
 
           <?php endforeach; ?>
         </table>

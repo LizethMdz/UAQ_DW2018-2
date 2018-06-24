@@ -2,10 +2,10 @@
 
      <ul class="menu">
       <li><a href="#">
-        <img src="libs/images/manage.png" width="100px"></a>
+        <img src="libs/images/ventas.png" width="100px"></a>
       </li>
       <li>
-        <a href="#"><i class="izq fas fa-home izq"></i>Panel de Control</a></li>
+        <a href="home.php"><i class="izq fas fa-home izq"></i>Panel de Control</a></li>
       <li>
 
         <a href="#"><i class="izq fab fa-sellsy izq"></i>Ventas<i class="fas fa-chevron-down der"></i></a>

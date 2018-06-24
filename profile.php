@@ -13,7 +13,7 @@
   endif;
 ?>
 <?php include_once('layouts/header2.php'); ?>
-<div class="panel-control">
+<div class="panel-control" style="background:#F1F2F7;">
 
       <div class="contenedor-perfil">
              <div class="img-perfil">
