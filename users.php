@@ -8,7 +8,7 @@
 //pull out all user form database
  $all_users = find_all_user();
 ?>
-<?php include_once('layouts/header.php'); ?>
+<?php include_once('layouts/header2.php'); ?>
 <div class="row">
    <div class="col-md-12">
      <?php echo display_msg($msg); ?>
@@ -53,14 +53,10 @@
            </td>
            <td><?php echo read_date($a_user['last_login'])?></td>
            <td class="text-center">
-             <div class="btn-group">
-                <a href="edit_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Editar">
-                  <i class="glyphicon glyphicon-pencil"></i>
-               </a>
-                <a href="delete_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Eliminar">
-                  <i class="glyphicon glyphicon-remove"></i>
-                </a>
-                </div>
+             <div class="">
+                    <a href="edit_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-edit"  title="Editar" data-toggle="tooltip">Editar</a>
+                    <a href="delete_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-eliminar"  title="Eliminar" data-toggle="tooltip"><i class="fa fa-trash"></i> Trash</a>
+                  </div>
            </td>
           </tr>
         <?php endforeach;?>
