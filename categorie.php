@@ -53,8 +53,8 @@ if (isset($msg)){
 <div class="panel-control">
 
   <div class="contenedor-general">
-        <div class="tb categoria izquierda">
-          <div class="tabla-encabezado">
+        <div class="tabla izquier">
+          <div class="tabla-encabezado head-cat">
             <i class="fas fa-th table-icon"></i>
               <p>MAS VENDIDOS</p>
 
@@ -71,8 +71,7 @@ if (isset($msg)){
 
         </div>
 
-
-        <div class="tabla categoria">
+        <div class="tabla derech">
            <div class="tabla-encabezado">
             <i class="fas fa-th table-icon"></i>
               <p>LISTA DE CATEGORIAS</p>

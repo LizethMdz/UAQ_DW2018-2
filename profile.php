@@ -19,11 +19,7 @@
              <div class="img-perfil">
                <img src="uploads/users/<?php echo $user_p['image'];?>" alt="user" width="100px" height="100px" style="margin-left: 35%;
                margin-top: 5%; border-radius: 50%;">
-               <small style="
-               padding: 20px;
-               left:30%;
-               top:120px;
-               position: absolute;
+               <small style="padding: 20px; left:30%; top:120px; position: absolute;
                color: white;"><?php echo first_character($user_p['name']); ?></small>
                <div class="text-perfil">
                 <?php if( $user_p['id'] === $user['id']):?>

@@ -19,7 +19,7 @@
       <div class="panel-control">
         <article class="full-width tile">
         <div class="tile-text">
-          <span class="text-condensedLight">
+          <span class="text-condensedLight" style="color: #A3C86D;">
             <?php  echo $c_user['total']; ?><br>
             <small>Administradores</small>
           </span>
@@ -31,7 +31,7 @@
 
       <article class="full-width tile">
         <div class="tile-text">
-          <span class="text-condensedLight">
+          <span class="text-condensedLight" style="color: #FF7857;">
             <?php  echo $c_categorie['total']; ?><br>
             <small>Categorias</small>
           </span>
@@ -42,7 +42,7 @@
       </article>
       <article class="full-width tile">
         <div class="tile-text">
-          <span class="text-condensedLight">
+          <span class="text-condensedLight" style="color: #7ACBEE;">
             <?php  echo $c_product['total']; ?><br>
             <small>Productos</small>
           </span>
@@ -53,7 +53,7 @@
       </article>
       <article class="full-width tile">
         <div class="tile-text">
-          <span class="text-condensedLight">
+          <span class="text-condensedLight" style="color: #FDD761;">
             <?php  echo $c_sale['total']; ?><br>
             <small>Ventas</small>
           </span>

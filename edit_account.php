@@ -66,7 +66,7 @@ if (isset($msg)){
 </div>
 
 <div class="panel-control" >
-        <div class="tb categoria izquierda" style="margin-left: 40px;">
+        <div class="tabla" style="margin-left: 40px; width:45%;">
           <div class="tabla-encabezado">
             <i class="fas fa-camera-retro table-icon"></i>
               <p>Cambiar Foto</p>
@@ -92,7 +92,7 @@ if (isset($msg)){
         </div>
 
 
-        <div class="tabla categoria altura">
+        <div class="tabla derech altura">
            <div class="tabla-encabezado">
             <i class="fas fa-user-edit table-icon"></i>
               <p>EDITAR MI CUENTA</p>

@@ -9,23 +9,40 @@
  $all_users = find_all_user();
 ?>
 <?php include_once('layouts/header2.php'); ?>
-<div class="row">
-   <div class="col-md-12">
-     <?php echo display_msg($msg); ?>
-   </div>
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
 </div>
+
+
 <div class="row">
-  <div class="col-md-12">
+
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <strong>
-          <span class="glyphicon glyphicon-th"></span>
-          <span>Usuarios</span>
+          <i class="fas fa-user-friends table-icon"></i>
+          <span style="left:10px;">Usuarios</span>
        </strong>
          <a href="add_user.php" class="btn btn-info pull-right">Agregar usuario</a>
       </div>
      <div class="panel-body">
-      <table class="table table-bordered table-striped">
+      <table class="table-user">
         <thead>
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
@@ -39,7 +56,7 @@
         </thead>
         <tbody>
         <?php foreach($all_users as $a_user): ?>
-          <tr>
+          <tr height="50px">
            <td class="text-center"><?php echo count_id();?></td>
            <td><?php echo remove_junk(ucwords($a_user['name']))?></td>
            <td><?php echo remove_junk(ucwords($a_user['username']))?></td>
@@ -63,7 +80,6 @@
        </tbody>
      </table>
      </div>
-    </div>
   </div>
 </div>
   <?php include_once('layouts/footer.php'); ?>
