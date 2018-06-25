@@ -5,7 +5,7 @@
    page_require_level(2);
   $products = join_product_table();
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
   <div class="row">
      <div class="col-md-12">
        <?php echo display_msg($msg); ?>

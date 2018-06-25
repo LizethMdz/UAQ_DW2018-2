@@ -24,7 +24,7 @@ $results = '';
     redirect('sales_report.php', false);
   }
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 <div class="panel-control" style="background: white;">
 
 

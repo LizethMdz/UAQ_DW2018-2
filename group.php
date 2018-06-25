@@ -5,7 +5,7 @@
    page_require_level(1);
   $all_groups = find_all('user_groups');
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 <!--ERRORES O MENSAJES-->
 <?php
 if (isset($msg)){

@@ -8,7 +8,7 @@
 //pull out all user form database
  $all_users = find_all_user();
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 <!--ERRORES O MENSAJES-->
 <?php
 if (isset($msg)){

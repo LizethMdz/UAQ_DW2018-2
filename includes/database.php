@@ -1,5 +1,5 @@
 <?php
-require_once(LIB_PATH_INC.DS."config.php");
+require_once("config.php");
 
 class MySqli_DB {
 
@@ -11,7 +11,7 @@ class MySqli_DB {
     }
 
 /*--------------------------------------------------------------*/
-/* Function for Open database connection
+/* FUNCION QUE ABRE UNA CONEXION A LA BASE DE DATOS
 /*--------------------------------------------------------------*/
 public function db_connect()
 {
@@ -28,7 +28,7 @@ public function db_connect()
          }
 }
 /*--------------------------------------------------------------*/
-/* Function for Close database connection
+/* FUNCION QUE CIERRA LA CONEXION A LA BASE DE DATOS
 /*--------------------------------------------------------------*/
 
 public function db_disconnect()
@@ -36,11 +36,11 @@ public function db_disconnect()
   if(isset($this->con))
   {
     mysqli_close($this->con);
-    unset($this->con);
+    unset($this->con); /*Destrentencia variable*/
   }
 }
 /*--------------------------------------------------------------*/
-/* Function for mysqli query
+/* FUNCION PARA HACER QUERIES
 /*--------------------------------------------------------------*/
 public function query($sql)
    {
@@ -49,51 +49,50 @@ public function query($sql)
           $this->query_id = $this->con->query($sql);
       }
       if (!$this->query_id)
-        // only for Develope mode
               die("Error en esta consulta :<pre> " . $sql ."</pre>");
-       // For production mode
-        //  die("Error on Query");
-
        return $this->query_id;
 
    }
 
+
 /*--------------------------------------------------------------*/
-/* Function for Query Helper
-/*--------------------------------------------------------------*/
-public function fetch_array($statement)
-{
-  return mysqli_fetch_array($statement);
-}
-public function fetch_object($statement)
-{
-  return mysqli_fetch_object($statement);
-}
-public function fetch_assoc($statement)
-{
-  return mysqli_fetch_assoc($statement);
-}
-public function num_rows($statement)
-{
-  return mysqli_num_rows($statement);
-}
-public function insert_id()
-{
-  return mysqli_insert_id($this->con);
-}
-public function affected_rows()
-{
-  return mysqli_affected_rows($this->con);
-}
-/*--------------------------------------------------------------*/
- /* Function for Remove escapes special
- /* characters in a string for use in an SQL statement
+ /* FUNCION PARA REMOVER CARACTERES ESPECIALES
+ /* EN UNA CONSULTA
  /*--------------------------------------------------------------*/
  public function escape($str){
    return $this->con->real_escape_string($str);
  }
+ /*--------------------------------------------------------------*/
+ /* Funciones principales para los QUERIES
+ /*--------------------------------------------------------------*/
+   public function fetch_array($sentencia)
+   {
+     return mysqli_fetch_array($sentencia);
+   }
+   public function fetch_object($sentencia)
+   {
+     return mysqli_fetch_object($sentencia);
+   }
+   public function fetch_assoc($sentencia)
+   {
+     return mysqli_fetch_assoc($sentencia);
+   }
+   public function num_rows($sentencia)
+   {
+     return mysqli_num_rows($sentencia);
+   }
+   public function insert_id()
+   {
+     return mysqli_insert_id($this->con);
+   }
+   public function affected_rows()
+   {
+     return mysqli_affected_rows($this->con);
+   }
+
+
 /*--------------------------------------------------------------*/
-/* Function for while loop
+/* FUNCION DE UN LOOP WHILE
 /*--------------------------------------------------------------*/
 public function while_loop($loop){
  global $db;
@@ -105,6 +104,8 @@ public function while_loop($loop){
 }
 
 }
+
+
 
 $db = new MySqli_DB();
 

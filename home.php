@@ -3,7 +3,7 @@
   require_once('includes/load.php');
   if (!$session->isUserLoggedIn(true)) { redirect('index.php', false);}
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 
       <div class="contenido">
          <h1>Esta es su nueva página de inicio</h1>

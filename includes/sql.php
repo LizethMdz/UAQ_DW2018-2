@@ -2,17 +2,17 @@
   require_once('includes/load.php');
 
 /*--------------------------------------------------------------*/
-/* Function for find all database table rows by table name
+/* FUNCION QUE ENCUENTRA TODOS LOS REGISTROS DE UNA TABLA
 /*--------------------------------------------------------------*/
-function find_all($table) {
+function find_all($tabla) {
    global $db;
-   if(tableExists($table))
+   if(tableExists($tabla))
    {
-     return find_by_sql("SELECT * FROM ".$db->escape($table));
+     return find_by_sql("SELECT * FROM ".$db->escape($tabla));
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for Perform queries
+/* FUNCION PARA HACER QUERIES
 /*--------------------------------------------------------------*/
 function find_by_sql($sql)
 {
@@ -22,14 +22,14 @@ function find_by_sql($sql)
  return $result_set;
 }
 /*--------------------------------------------------------------*/
-/*  Function for Find data from table by id
+/*  FUNCION QUE ENCUENTRA LOS DATOS DE UN REGISTRO POR ID Y TABLA
 /*--------------------------------------------------------------*/
-function find_by_id($table,$id)
+function find_by_id($tabla,$id)
 {
   global $db;
   $id = (int)$id;
-    if(tableExists($table)){
-          $sql = $db->query("SELECT * FROM {$db->escape($table)} WHERE id='{$db->escape($id)}' LIMIT 1");
+    if(tableExists($tabla)){
+          $sql = $db->query("SELECT * FROM {$db->escape($tabla)} WHERE id='{$db->escape($id)}' LIMIT 1");
           if($result = $db->fetch_assoc($sql))
             return $result;
           else
@@ -37,14 +37,14 @@ function find_by_id($table,$id)
      }
 }
 /*--------------------------------------------------------------*/
-/* Function for Delete data from table by id
+/* FUNCION QUE BORRA UN REGISTRO DE UNA TABLA POR UN ID
 /*--------------------------------------------------------------*/
-function delete_by_id($table,$id)
+function delete_by_id($tabla,$id)
 {
   global $db;
-  if(tableExists($table))
+  if(tableExists($tabla))
    {
-    $sql = "DELETE FROM ".$db->escape($table);
+    $sql = "DELETE FROM ".$db->escape($tabla);
     $sql .= " WHERE id=". $db->escape($id);
     $sql .= " LIMIT 1";
     $db->query($sql);
@@ -52,26 +52,26 @@ function delete_by_id($table,$id)
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for Count id  By table name
+/* FUNCION QUE CUENTA REGISTROS QUE TENGAN UN MISMO ID
 /*--------------------------------------------------------------*/
 
-function count_by_id($table){
+function count_by_id($tabla){
   global $db;
   if(tableExists($table))
   {
-    $sql    = "SELECT COUNT(id) AS total FROM ".$db->escape($table);
-    $result = $db->query($sql);
-     return($db->fetch_assoc($result));
+    $sql    = "SELECT COUNT(id) AS total FROM ".$db->escape($tabla);
+    $resultado = $db->query($sql);
+     return($db->fetch_assoc($resultado));
   }
 }
 /*--------------------------------------------------------------*/
-/* Determine if database table exists
+/* FUNCION QUE DETERMINA SI UNA TABLA EXISTE EN LA BASE DE DATOS
 /*--------------------------------------------------------------*/
-function tableExists($table){
+function tableExists($tabla){
   global $db;
-  $table_exit = $db->query('SHOW TABLES FROM '.DB_NAME.' LIKE "'.$db->escape($table).'"');
-      if($table_exit) {
-        if($db->num_rows($table_exit) > 0)
+  $tabla_existe = $db->query('SHOW TABLES FROM '.DB_NAME.' LIKE "'.$db->escape($tabla).'"');
+      if($tabla_existe) {
+        if($db->num_rows($tabla_existe) > 0)
               return true;
          else
               return false;
@@ -89,37 +89,16 @@ function tableExists($table){
     $result = $db->query($sql);
     if($db->num_rows($result)){
       $user = $db->fetch_assoc($result);
-      $password_request = sha1($password);
+      $password_request = sha1($password); //Verifica el hash de un string
       if($password_request === $user['password'] ){
         return $user['id'];
       }
     }
    return false;
   }
-  /*--------------------------------------------------------------*/
-  /* Login with the data provided in $_POST,
-  /* coming from the login_v2.php form.
-  /* If you used this method then remove authenticate function.
- /*--------------------------------------------------------------*/
-   function authenticate_v2($username='', $password='') {
-     global $db;
-     $username = $db->escape($username);
-     $password = $db->escape($password);
-     $sql  = sprintf("SELECT id,username,password,user_level FROM users WHERE username ='%s' LIMIT 1", $username);
-     $result = $db->query($sql);
-     if($db->num_rows($result)){
-       $user = $db->fetch_assoc($result);
-       $password_request = sha1($password);
-       if($password_request === $user['password'] ){
-         return $user;
-       }
-     }
-    return false;
-   }
-
 
   /*--------------------------------------------------------------*/
-  /* Find current log in user by session id
+  /* FUNCION QUE ENCUENTRA EL SESSION ID DEL USUARIO ACTUAL
   /*--------------------------------------------------------------*/
   function current_user(){
       static $current_user;
@@ -133,8 +112,7 @@ function tableExists($table){
     return $current_user;
   }
   /*--------------------------------------------------------------*/
-  /* Find all user by
-  /* Joining users table and user gropus table
+  /* FUNCION QUE IDENTIFICA EL USUARIO Y SU GRUPO AL QUE PERTENECE
   /*--------------------------------------------------------------*/
   function find_all_user(){
       global $db;
@@ -144,11 +122,11 @@ function tableExists($table){
       $sql .="FROM users u ";
       $sql .="LEFT JOIN user_groups g ";
       $sql .="ON g.group_level=u.user_level ORDER BY u.name ASC";
-      $result = find_by_sql($sql);
-      return $result;
+      $resultado = find_by_sql($sql);
+      return $resultado;
   }
   /*--------------------------------------------------------------*/
-  /* Function to update the last log in of a user
+  /* FUNCION QUE REGISTRA EL ULTIMO ACCESO AL SISTEMA
   /*--------------------------------------------------------------*/
 
  function updateLastLogIn($user_id)
@@ -156,46 +134,46 @@ function tableExists($table){
 		global $db;
     $date = make_date();
     $sql = "UPDATE users SET last_login='{$date}' WHERE id ='{$user_id}' LIMIT 1";
-    $result = $db->query($sql);
-    return ($result && $db->affected_rows() === 1 ? true : false);
+    $resultado = $db->query($sql);
+    return ($resultado && $db->affected_rows() === 1 ? true : false);
 	}
 
   /*--------------------------------------------------------------*/
-  /* Find all Group name
+  /* FUNCION QUE ENCIENTRA UN REGISTRO DE UN GRUPO EN BASE A SU NOMBRE
   /*--------------------------------------------------------------*/
   function find_by_groupName($val)
   {
     global $db;
     $sql = "SELECT group_name FROM user_groups WHERE group_name = '{$db->escape($val)}' LIMIT 1 ";
-    $result = $db->query($sql);
-    return($db->num_rows($result) === 0 ? true : false);
+    $resultado = $db->query($sql);
+    return($db->num_rows($resultado) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Find group level
+  /* FUNCINO QUE DETERMINA EL NIVEL DE UN GRUPO
   /*--------------------------------------------------------------*/
   function find_by_groupLevel($level)
   {
     global $db;
     $sql = "SELECT group_level FROM user_groups WHERE group_level = '{$db->escape($level)}' LIMIT 1 ";
-    $result = $db->query($sql);
-    return($db->num_rows($result) === 0 ? true : false);
+    $resultado = $db->query($sql);
+    return($db->num_rows($resultado) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Function for cheaking which user level has access to page
+  /* FUNCION QUE EVALUA EL USUARIO LOGEADO
   /*--------------------------------------------------------------*/
    function page_require_level($require_level){
      global $session;
      $current_user = current_user();
      $login_level = find_by_groupLevel($current_user['user_level']);
-     //if user not login
+     //SI NO HAY UN USUARIO LOGEADO
      if (!$session->isUserLoggedIn(true)):
             $session->msg('d','Por favor Iniciar sesión...');
             redirect('index.php', false);
-      //if Group status Deactive
+      //SI NO HAY UN ESTATUS DE UN GRUPO
      elseif($login_level['group_status'] === '0'):
            $session->msg('d','Este nivel de usaurio esta inactivo!');
            redirect('home.php',false);
-      //cheackin log in User level and Require level is Less than or equal to
+      //EVALUA EL NIVEL DE UN USUARIO Y ESTE ESTE DENTRO DEL RANGO
      elseif($current_user['user_level'] <= (int)$require_level):
               return true;
       else:
@@ -205,8 +183,7 @@ function tableExists($table){
 
      }
    /*--------------------------------------------------------------*/
-   /* Function for Finding all product name
-   /* JOIN with categorie  and media database table
+   /* FUUNCION QUE ENLAZA EL PRODUCTO CON SU IMAGEN CORRESPONDIENTE Y LA CATEGORIA
    /*--------------------------------------------------------------*/
   function join_product_table(){
      global $db;
@@ -220,21 +197,21 @@ function tableExists($table){
 
    }
   /*--------------------------------------------------------------*/
-  /* Function for Finding all product name
-  /* Request coming from ajax.php for auto suggest
+  /* FUNCION QUE DESPLIEGA EL NOMBRE DE UN PRODUCTO SI CORRESPONDE AL MISMO
+  /*
   /*--------------------------------------------------------------*/
 
    function find_product_by_title($product_name){
      global $db;
      $p_name = remove_junk($db->escape($product_name));
      $sql = "SELECT name FROM products WHERE name like '%$p_name%' LIMIT 5";
-     $result = find_by_sql($sql);
-     return $result;
+     $resultado = find_by_sql($sql);
+     return $resultado;
    }
 
   /*--------------------------------------------------------------*/
-  /* Function for Finding all product info by product title
-  /* Request coming from ajax.php
+  /* FUNCION QUE ENCUENTRA TODOS LOS PRODUCTOS QUE TENGAN EL MISMO NOMBRE
+  /*
   /*--------------------------------------------------------------*/
   function find_all_product_info_by_title($title){
     global $db;
@@ -245,19 +222,19 @@ function tableExists($table){
   }
 
   /*--------------------------------------------------------------*/
-  /* Function for Update product quantity
+  /* FUNCION QUE ACTUALIZA LA CANTIDAD DE PRODUCTOS
   /*--------------------------------------------------------------*/
   function update_product_qty($qty,$p_id){
     global $db;
     $qty = (int) $qty;
     $id  = (int)$p_id;
     $sql = "UPDATE products SET quantity=quantity -'{$qty}' WHERE id = '{$id}'";
-    $result = $db->query($sql);
+    $resultado = $db->query($sql);
     return($db->affected_rows() === 1 ? true : false);
 
   }
   /*--------------------------------------------------------------*/
-  /* Function for Display Recent product Added
+  /* FUUNCION QUE ENCUENTRA EL PRODUCTO RECIENTE
   /*--------------------------------------------------------------*/
  function find_recent_product_added($limit){
    global $db;
@@ -269,7 +246,7 @@ function tableExists($table){
    return find_by_sql($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for Find Highest saleing Product
+ /* FUNCION QUE ENCUENTRA LA VENTA MAS ALTA O COMUN
  /*--------------------------------------------------------------*/
  function find_higest_saleing_product($limit){
    global $db;
@@ -281,7 +258,7 @@ function tableExists($table){
    return $db->query($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for find all sales
+ /* FUNCION QUE DEVUELVE TODAS LAS VENTAS
  /*--------------------------------------------------------------*/
  function find_all_sale(){
    global $db;
@@ -292,7 +269,7 @@ function tableExists($table){
    return find_by_sql($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for Display Recent sale
+ /* FUNCION QUE DETERMINA LA ULTIMA VENTA
  /*--------------------------------------------------------------*/
 function find_recent_sale_added($limit){
   global $db;
@@ -303,7 +280,7 @@ function find_recent_sale_added($limit){
   return find_by_sql($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate sales report by two dates
+/* FUNCION QUE EVALUA DOS FECHAS Y GENERA UN REPORTE DE LAS VENTAS
 /*--------------------------------------------------------------*/
 function find_sale_by_dates($start_date,$end_date){
   global $db;
@@ -322,7 +299,7 @@ function find_sale_by_dates($start_date,$end_date){
   return $db->query($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate Daily sales report
+/* FUNCION QUE GENERA UN REPORTE DIARIO DE LAS VENTAS
 /*--------------------------------------------------------------*/
 function  dailySales($year,$month){
   global $db;
@@ -336,7 +313,7 @@ function  dailySales($year,$month){
   return find_by_sql($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate Monthly sales report
+/* FUNCION QUE GENERA UN REPORTE MENSUAL DE LAS VENTAS
 /*--------------------------------------------------------------*/
 function  monthlySales($year){
   global $db;

@@ -4,7 +4,7 @@ $page_title = 'Reporte de ventas';
   // Checkin What level user has permission to view this page
    page_require_level(3);
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 <<<<<<< HEAD
 =======
 <!--ERRORES O MENSAJES-->

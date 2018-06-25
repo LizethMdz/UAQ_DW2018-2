@@ -10,9 +10,8 @@
  $month = date('m');
  $sales = dailySales($year,$month);
 ?>
-<?php include_once('layouts/header2.php'); ?>
-<<<<<<< HEAD
-=======
+<?php include_once('layouts/header.php'); ?>
+
 
 <!--ERRORES O MENSAJES-->
 <?php

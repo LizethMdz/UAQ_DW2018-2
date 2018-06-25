@@ -7,8 +7,8 @@ class  Media {
   public $fileType;
   public $fileTempPath;
   //Set destination for upload
-  public $userPath = SITE_ROOT.DS.'..'.DS.'uploads/users';
-  public $productPath = SITE_ROOT.DS.'..'.DS.'uploads/products';
+  public $userPath = 'uploads/users';
+  public $productPath = 'uploads/products';
 
 
   public $errors = array();
@@ -74,7 +74,7 @@ class  Media {
     endif;
  }
  /*--------------------------------------------------------------*/
- /* Function for Process media file
+ /* FUNCION QUE PROCESA EL ARCHIVO DE MEDIA
  /*--------------------------------------------------------------*/
   public function process_media(){
     if(!empty($this->errors)){
@@ -111,7 +111,7 @@ class  Media {
 
   }
   /*--------------------------------------------------------------*/
-  /* Function for Process user image
+  /* FUNCION QUE PROCESA LA IMAGEN
   /*--------------------------------------------------------------*/
  public function process_user($id){
 
@@ -150,7 +150,7 @@ class  Media {
     }
  }
  /*--------------------------------------------------------------*/
- /* Function for Update user image
+ /* FUNCION QUE ACTUALIZA LA IMAGEN DE UN USUARIO
  /*--------------------------------------------------------------*/
   private function update_userImg($id){
      global $db;
@@ -162,7 +162,7 @@ class  Media {
 
    }
  /*--------------------------------------------------------------*/
- /* Function for Delete old image
+ /* FUNCION QUE ELIMINA LA ULTIMA IMAGEN
  /*--------------------------------------------------------------*/
   public function user_image_destroy($id){
      $image = find_by_id('users',$id);
@@ -176,7 +176,7 @@ class  Media {
 
    }
 /*--------------------------------------------------------------*/
-/* Function for insert media image
+/* FUNCION QUE INSERTA LAS IMAGENES EN LA BASE DE DATOS
 /*--------------------------------------------------------------*/
   private function insert_media(){
 
@@ -191,7 +191,7 @@ class  Media {
 
   }
 /*--------------------------------------------------------------*/
-/* Function for Delete media by id
+/* FUNCION PARA ELIMINAR LAS IMAGENES POR ID
 /*--------------------------------------------------------------*/
    public function media_destroy($id,$file_name){
      $this->fileName = $file_name;

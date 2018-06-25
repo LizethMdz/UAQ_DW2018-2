@@ -13,7 +13,7 @@
  $recent_products = find_recent_product_added('5');
  $recent_sales    = find_recent_sale_added('5')
 ?>
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 
 
       <div class="panel-control">

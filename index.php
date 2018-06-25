@@ -4,7 +4,7 @@
   if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 ?>
 
-<?php include_once('layouts/header2.php'); ?>
+<?php include_once('layouts/header.php'); ?>
     <!--Nav-->
   <nav>
     <div class="navbar-top">

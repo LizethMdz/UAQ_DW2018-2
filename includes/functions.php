@@ -2,34 +2,34 @@
  $errors = array();
 
  /*--------------------------------------------------------------*/
- /* Function for Remove escapes special
- /* characters in a string for use in an SQL statement
+ /* FUNCION QUE ELIMINA CUALQUIER CARACTER EN UNA SENTENCIA SQL
  /*--------------------------------------------------------------*/
-function real_escape($str){
+function real_escape($string){
   global $con;
-  $escape = mysqli_real_escape_string($con,$str);
+  $escape = mysqli_real_escape_string($con,$string);
   return $escape;
 }
 /*--------------------------------------------------------------*/
-/* Function for Remove html characters
+/* FUNCION QUE ELIMINA CARACTERES ESPECIALES POR HTML
 /*--------------------------------------------------------------*/
-function remove_junk($str){
-  $str = nl2br($str);
+function remove_junk($string){
+  /*Inserta un salto de linea por linea*/
+  $string = nl2br($string);
   /*Traduccion de comilla doble y etiquetas*/
-  $str = htmlspecialchars(strip_tags($str, ENT_QUOTES));
-  return $str;
+  $string = htmlspecialchars(strip_tags($string, ENT_QUOTES));
+  return $string;
 }
 /*--------------------------------------------------------------*/
-/* Function for Uppercase first character
+/* FUNCION QUE COLOCA UNA LETRA MAYUSCULA AL INICIO DE DE UNA PALABRA
 /*--------------------------------------------------------------*/
-function first_character($str){
-  $val = str_replace('-'," ",$str);
+function first_character($string){
+  $val = str_replace('-'," ",$string);
   /*Para convertir la primera letra en mayuscula*/
   $val = ucfirst($val);
   return $val;
 }
 /*--------------------------------------------------------------*/
-/* Function for Checking input fields not empty
+/* FUNCION QUE VALIDA LOS CAMPOS DE ENTRADA
 /*--------------------------------------------------------------*/
 function validate_fields($var){
   global $errors;
@@ -42,15 +42,13 @@ function validate_fields($var){
   }
 }
 /*--------------------------------------------------------------*/
-/* Function for Display Session Message
-   Ex echo displayt_msg($message);
+/* FUNCION QUE MUESTRA UN MENSAJE EN PANTALLA
 /*--------------------------------------------------------------*/
 function display_msg($msg =''){
    $output = array();
    if(!empty($msg)) {
       foreach ($msg as $key => $value) {
-         $output  = "<div class=\"alert alert-{$key}\">";
-         $output .= "<a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>";
+         $output  = "<div>";
          $output .= remove_junk(first_character($value));
          $output .= "</div>";
       }
@@ -60,7 +58,7 @@ function display_msg($msg =''){
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for redirect
+/* FUNCION PARA REDIRECCIONAR A OTRA VISTA
 /*--------------------------------------------------------------*/
 function redirect($url, $permanent = false)
 {
@@ -71,9 +69,9 @@ function redirect($url, $permanent = false)
 
     exit();
 }
-/*--------------------------------------------------------------*/
-/* Function for find out total saleing price, buying price and profit
-/*--------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
+/* FUNCION QUE DETERMINA EL TOTAL DE UNA VENTA CON PRECIO Y NO. DE PIEZAS
+/*------------------------------------------------------------------------*/
 function total_price($totals){
    $sum = 0;
    $sub = 0;
@@ -85,7 +83,7 @@ function total_price($totals){
    return array($sum,$profit);
 }
 /*--------------------------------------------------------------*/
-/* Function for Readable date time
+/* FUNCION QUE HACE LEGIBLE UNA FECHA
 /*--------------------------------------------------------------*/
 function read_date($str){
      if($str)
@@ -94,20 +92,20 @@ function read_date($str){
       return null;
   }
 /*--------------------------------------------------------------*/
-/* Function for  Readable Make date time
+/* FUNCION QUE DA FORMATO A LA FECHA
 /*--------------------------------------------------------------*/
 function make_date(){
   return strftime("%Y-%m-%d %H:%M:%S", time());
 }
 /*--------------------------------------------------------------*/
-/* Function for  Readable date time
+/* FUNCION CONTADOR POR ID
 /*--------------------------------------------------------------*/
 function count_id(){
   static $count = 1;
   return $count++;
 }
 /*--------------------------------------------------------------*/
-/* Function for Creting random string
+/* FUNCION QUE CREA UN STRING ALEATORIO 0-Z
 /*--------------------------------------------------------------*/
 function randString($length = 5)
 {
