@@ -1,8 +1,8 @@
 <!--MENU IZZQUIERDA-->
 
      <ul class="menu">
-      <li><a href="#">
-        <img src="libs/images/manage.png" width="100px"></a>
+      <li><a href="home.php">
+        <img src="libs/images/warehouse.png" width="80px"></a>
       </li>
 
       <li>

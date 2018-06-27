@@ -6,12 +6,31 @@
   $products = join_product_table();
 ?>
 <?php include_once('layouts/header.php'); ?>
+
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
+
+</div>
   <div class="row">
-     <div class="col-md-12">
-       <?php echo display_msg($msg); ?>
-     </div>
+
     <div class="col-md-12">
-      <div class="panel panel-default">
+      <div class="panel">
         <div class="panel-heading clearfix">
             <strong>
               <span>PRODUCTOS</span>
@@ -19,7 +38,7 @@
            <a href="add_product.php" class="btn btn-primary">Agregar producto</a>
         </div>
         <div class="panel-body">
-          <table class="table table-bordered">
+          <table class="table">
             <thead>
               <tr>
                 <th class="text-center" style="width: 50px;">#</th>

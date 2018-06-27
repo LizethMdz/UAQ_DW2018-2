@@ -81,7 +81,7 @@ if (isset($msg)){
           <form action="edit_account.php" method="POST" enctype="multipart/form-data">
 
             <input type="file" name="file_upload" class="input-categoria tamano">
-            <input type="hidden" name="user_id">
+            <input type="hidden" name="user_id" value="<?php echo $user['id'];?>">
             <button type="submit" name="submit" class="button orange pos">
             <!--<a href="#">-->
                 <span><i class="fas fa-pen-square"></i></span>Cambiar

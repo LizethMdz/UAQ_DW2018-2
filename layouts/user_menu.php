@@ -1,7 +1,7 @@
 <!--MENU IZZQUIERDA-->
 
      <ul class="menu">
-      <li><a href="#">
+      <li><a href="home.php">
         <img src="libs/images/ventas.png" width="100px"></a>
       </li>
       <li>
@@ -17,11 +17,11 @@
         <ul>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
+            <a href="sales.php"><i class="izq fas fa-level-down-alt"></i>Administrar Ventas</a>
           </li>
 
           <li>
-            <a href="#"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
+            <a href="add_sale.php"><i class="izq fas fa-level-down-alt"></i>Agregar Venta</a>
           </li>
         </ul>
       </li>

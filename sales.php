@@ -8,17 +8,32 @@
 $sales = find_all_sale();
 ?>
 <?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-6">
-    <?php echo display_msg($msg); ?>
-  </div>
+
+<!--ERRORES O MENSAJES-->
+<?php
+if (isset($msg)){
+?>
+<div class="alerta" >
+  <?php
+  echo display_msg($msg); ?>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+              $(".alerta").fadeOut(2000);
+            },1000);
+        });
+  </script>
+<?php
+  }
+ ?>
 </div>
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
+            <i class="fas fa-cubes table-icon"></i>
           <strong>
-            <span class="glyphicon glyphicon-th"></span>
             <span>Todas las ventas</span>
           </strong>
           <div class="pull-right">
@@ -26,9 +41,9 @@ $sales = find_all_sale();
           </div>
         </div>
         <div class="panel-body">
-          <table class="table table-bordered table-striped">
+          <table class="table" style="width:100%;">
             <thead>
-              <tr>
+              <tr style="height:35px;">
                 <th class="text-center" style="width: 50px;">#</th>
                 <th> Nombre del producto </th>
                 <th class="text-center" style="width: 15%;"> Cantidad</th>
@@ -39,7 +54,7 @@ $sales = find_all_sale();
             </thead>
            <tbody>
              <?php foreach ($sales as $sale):?>
-             <tr>
+             <tr style="height:40px;">
                <td class="text-center"><?php echo count_id();?></td>
                <td><?php echo remove_junk($sale['name']); ?></td>
                <td class="text-center"><?php echo (int)$sale['qty']; ?></td>

@@ -57,7 +57,7 @@ function delete_by_id($tabla,$id)
 
 function count_by_id($tabla){
   global $db;
-  if(tableExists($table))
+  if(tableExists($tabla))
   {
     $sql    = "SELECT COUNT(id) AS total FROM ".$db->escape($tabla);
     $resultado = $db->query($sql);

@@ -93,7 +93,7 @@ if (isset($msg)){
              </select>
            <button style="padding: 10px;
            margin-left: 25px; margin-top: 25px; background: #3458C1; color:#fff;" name="add_user" type="submit">
-             Cambiar
+             Agregar
            </button>
          </form>
          </div>

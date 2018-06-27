@@ -172,7 +172,7 @@ section{
   z-index: 99;
   top: 0;
   left: 0;
-  background-color: #FFF;
+  background-color:#9095AA;
   width: 100%;
   height: 65px;
   line-height: 65px;
@@ -194,8 +194,9 @@ section{
   display: inline-block;
   width: 250px;
   height: 65px;
-  color: #9b9b9b;
+  color: #fff;
   margin-left: 20px;
+	font-size: 14px;
   background: transparent;
   position: relative;
 }
@@ -204,13 +205,29 @@ section{
   display: inline-block;
   width: 250px;
   height: 50px;
-  color: #9b9b9b;
+  color: #fff;
   left:480px;
-  background: transparent;
+	top:5px;
+	text-align: center;
+	font-size: 14px;
+  background: red;
   position: relative;
 }
+/*DIV NOMBRE DEL USUARIO*/
+.header-user-name{
+	text-decoration:none;
+	color:#fff;
+	margin: 0px;
+	top:5px;
+	display: inline-block;
+	text-align: center;
+	background: yellow;
+	height: 40px;
+	position: relative;
+}
+/*IMAGEN DEL USUARIO*/
 .img-user {
-  width: 45px;
+  width: 40px;
   height:38px;
   position: relative;
   border-radius: 50%;
@@ -234,7 +251,7 @@ section{
   /*background: #2a3542;*/
   border-right: 1px solid #ddd;
   text-align: center;
-	background: white;
+	background: #466099;
   font-family:'Roboto', sans-serif;
 	overflow:auto;
 }
@@ -250,10 +267,11 @@ section{
 .contenedor-menu .menu li a {
   font-size: 15px;
   /*color: gray;*/
-	color: #0072B6;
+	/*color: #0072B6;*/
+	color:#fff;
   display: block;
   padding: 13px 10px;
-  background: rgba(0,0,0,0.02);
+  background:transparent;
   font-family:'Roboto', sans-serif;
   text-decoration: none;
 }
@@ -275,18 +293,14 @@ section{
 /*---------------------------------------*/
 
 .contenedor-menu .menu li a:hover{
-  background: gray;
+  background: #D2517E;
   font-family:'Roboto', sans-serif;
-  color:orange;
+  color:#fff;
 }
 
 .contenedor-menu .menu li a img{
 	text-align: center;
-<<<<<<< HEAD
-	padding-left: 5%;
-=======
 	padding-left: 15%;
->>>>>>> master
 }
 
 .contenedor-menu .menu ul {
@@ -305,13 +319,10 @@ section{
 	left: calc(70% - 350px);
 	top: calc(60% - 250px);
 }
-/*Tablas Seccion 2======================================================000*/
+/*==============Tablas Seccion 2===================================*/
 .row{
-	/*width: 700px;*/
-	/*height: 150px;*/
-	/*position: fixed;*/
+
 	left: calc(10% - 350px);
-	/*background: #ecf0f1;*/
 	margin-left: 20%;
 
 }
@@ -341,10 +352,10 @@ table.table-user, table.table-group{
 	width: 100%;
 }
 
-/*
+
 	.pull-right{
-		text-align: right;
-	}*/
+		float: right;
+	}
 .panel{
 	width: auto;
 	height: auto;
@@ -473,17 +484,17 @@ table.table-user, table.table-group{
 /************************************************/
 /*INDEX CONTENEDOR*/
 .contenido{
-	background: #EEEEEE;
 	border:1px solid #dadada;
 	border-radius: 5px;
 	position: relative;
 	width: 79%;
-	height: 250px;
+	height: 350px;
 	left: 250px;
 	text-align: center;
-	font-size: 40px;
-	color: #2e6da4;
+	font-size: 35px;
+	color: #8BC53F;
 	top:65px;
+	font-style: italic;
 	margin: 1% 1%;
 }
 
@@ -1091,7 +1102,7 @@ th.title-enc{
 th{
 	color: black;
 }
-
+/*
 .input-busq{
 	margin-top:2%;
 	margin-left: 50px;
@@ -1112,7 +1123,44 @@ th{
 	outline: none;
 	padding: 10px;
 	border-radius: 5px;
+}*/
+
+
+/*div contenedor*/
+
+.input-busq{
+	margin-top:2%;
+	margin-left: 50px;
+	width: 70%;
+	padding:10px 5px 10px 5px;
+
 }
+.bord{
+	margin-top:5%;
+	padding: 5px;
+}
+
+.btn-buscar{
+	background:#0184F7 ;
+	height: 35px;
+	width: 25%;
+	color: white;
+	outline: none;
+	float: left;
+	padding: 10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+/*input buscar*/
+.busc{
+	width: 70%;
+	height: 22px;
+	padding: 5px;
+	margin-left: 0px;
+}
+
+
+
 
 /*ESTILOS GENERALES PARA LOS PARRAFOS*/
 
@@ -1333,8 +1381,8 @@ table.tabla-sales{
 	/*AJAX*/
 
 	.list-group{
-		margin-left: 165px;
-		width: 240px;
+		margin-left: 180px;
+		width: 70%;
 		padding:10px;
 		background: white;
 		border-radius: 2px;

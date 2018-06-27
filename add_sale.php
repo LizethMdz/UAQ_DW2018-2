@@ -38,8 +38,7 @@
 
 ?>
 <?php include_once('layouts/header.php'); ?>
-<<<<<<< HEAD
-=======
+
 <!--ERRORES O MENSAJES-->
 <?php
 if (isset($msg)){
@@ -65,11 +64,10 @@ if (isset($msg)){
         <div class="input-busq">
           <form method="post" action="ajax.php" autocomplete="off" id="sug-form">
           <button type="submit" class="btn-buscar">Colocar en Lista</button>
-          <input type="text" id="sug_input"  name="title" placeholder="Buscar por el nombre del producto" class="input-grp" style="margin-left: 0px;">
+          <input type="text" id="sug_input"  name="title" placeholder="Buscar por el nombre del producto" class="input-grp busc">
           <div id="result" class="list-group">
-            <!--<p class="list-group-item"></p>-->
           </div>
-          </form>
+        </form>
         </div>
         <div class="form-sale">
           <div class="tabla-encabezado">
