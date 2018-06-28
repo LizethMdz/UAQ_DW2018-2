@@ -13,7 +13,7 @@
   endif;
 ?>
 <?php include_once('layouts/header.php'); ?>
-<div class="panel-control" style="background:#F1F2F7;">
+<div class="panel-control">
 
       <div class="contenedor-perfil">
              <div class="img-perfil">
@@ -22,31 +22,19 @@
                <small style="padding: 20px; left:30%; top:120px; position: absolute;
                color: white;"><?php echo first_character($user_p['name']); ?></small>
                <div class="text-perfil">
-                <?php if( $user_p['id'] === $user['id']):?>
-               <a href="edit_account.php" class="icon-perfil">
-                 <i class="fas fa-user-edit"></i>
-                 <small>Editar</small>
-               </a>
-               <?php endif;?>
-             </div>
-             </div>
+                    <?php if( $user_p['id'] === $user['id']):?>
+                   <a href="edit_account.php" class="icon-perfil">
+                     <i class="fas fa-user-edit"></i>
+                     <small>Editar</small>
+                   </a>
+                   <?php endif;?>
+               </div>
+            </div>
+            <div class="overlay">
+                <div class="text"><?php echo first_character($user_p['name']); ?></div>
+            </div>
 
       </div>
 </div>
-<!--
-<div class="row">
-   <div class="col-md-4">
-       <div class="panel profile">
-         <div class="jumbotron text-center bg-red">
-            <img class="img-circle img-size-2" src="uploads/users/<?php echo $user_p['image'];?>" alt="">
-           <h3><?php echo first_character($user_p['name']); ?></h3>
-         </div>
-        <?php if( $user_p['id'] === $user['id']):?>
-         <ul class="nav nav-pills nav-stacked">
-          <li><a href="edit_account.php"> <i class="glyphicon glyphicon-edit"></i> Editar perfil</a></li>
-         </ul>
-       <?php endif;?>
-       </div>
-   </div>
-</div>-->
+
 <?php include_once('layouts/footer.php'); ?>

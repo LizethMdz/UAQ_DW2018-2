@@ -23,6 +23,9 @@
             <?php  echo $c_user['total']; ?><br>
             <small>Administradores</small>
           </span>
+          <div class="overlay-p">
+              <div class="text-p">Administradores</div>
+          </div>
         </div>
         <div class="tile-icon bg-success">
             <i class="fas fa-users tile-icon-int"></i>
@@ -35,6 +38,9 @@
             <?php  echo $c_categorie['total']; ?><br>
             <small>Categorias</small>
           </span>
+          <div class="overlay-p">
+              <div class="text-p">Categorias</div>
+          </div>
         </div>
         <div class="tile-icon bg-danger">
             <i class="fab fa-elementor tile-icon-int "></i>
@@ -46,6 +52,9 @@
             <?php  echo $c_product['total']; ?><br>
             <small>Productos</small>
           </span>
+          <div class="overlay-p">
+              <div class="text-p">Productos</div>
+          </div>
         </div>
          <div class="tile-icon bg-info">
             <i class="fab fa-product-hunt tile-icon-int "></i>
@@ -57,6 +66,9 @@
             <?php  echo $c_sale['total']; ?><br>
             <small>Ventas</small>
           </span>
+          <div class="overlay-p">
+              <div class="text-p">Ventas</div>
+          </div>
         </div>
           <div class="tile-icon bg-yellow">
             <i class="fab fa-sellsy tile-icon-int"></i>

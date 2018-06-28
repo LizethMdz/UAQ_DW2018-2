@@ -18,7 +18,7 @@
          endforeach;
       } else {
 
-        $html .= '<h4 onClick=\"fill(\''.addslashes().'\')\" class=\"list-group-item\">';
+        $html .= '<h4 class=\"list-group-item\">';
         $html .= 'No encontrado';
         $html .= "</h4>"; /*li*/
 
@@ -40,16 +40,16 @@
           $html .= "<td id=\"s_name\">".$result['name']."</td>";
           $html .= "<input type=\"hidden\" name=\"s_id\" value=\"{$result['id']}\">";
           $html  .= "<td>";
-          $html  .= "<input type=\"text\" class=\"form-control\" name=\"price\" value=\"{$result['sale_price']}\">";
+          $html  .= "<input type=\"text\" name=\"price\" value=\"{$result['sale_price']}\">";
           $html  .= "</td>";
           $html .= "<td id=\"s_qty\">";
-          $html .= "<input type=\"text\" class=\"form-control\" name=\"quantity\" value=\"1\">";
+          $html .= "<input type=\"text\" name=\"quantity\" value=\"1\">";
           $html  .= "</td>";
           $html  .= "<td>";
-          $html  .= "<input type=\"text\" class=\"form-control\" name=\"total\" value=\"{$result['sale_price']}\">";
+          $html  .= "<input type=\"text\" name=\"total\" value=\"{$result['sale_price']}\">";
           $html  .= "</td>";
           $html  .= "<td>";
-          $html  .= "<input type=\"date\" class=\"form-control datePicker\" name=\"date\" data-date-format=\"yyyy-mm-dd\">";
+          $html  .= "<input type=\"date\" name=\"date\" data-date-format=\"yyyy-mm-dd\">";
           $html  .= "</td>";
           $html  .= "<td>";
           $html  .= "<button type=\"submit\" name=\"add_sale\" class=\"btn-agregar\">Agregar</button>";
@@ -58,7 +58,7 @@
 
         }
     } else {
-        $html ='<tr><td>El producto no se encuentra registrado en la base de datos</td></tr>';
+        $html ='<tr><td colspan="6">El producto no se encuentra registrado en la base de datos</td></tr>';
     }
 
     echo json_encode($html);

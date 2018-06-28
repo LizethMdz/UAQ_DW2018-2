@@ -88,33 +88,6 @@ if (isset($msg)){
           </button>
         </form>
         </div>
-     </div>
-<!--
-<div class="login-page">
-    <div class="text-center">
-       <h3>Agregar nuevo grupo de usurios</h3>
-     </div>
-     <?php echo display_msg($msg); ?>
-      <form method="post" action="add_group.php" class="clearfix">
-        <div class="form-group">
-              <label for="name" class="control-label">Nombre del grupo</label>
-              <input type="name" class="form-control" name="group-name" required>
-        </div>
-        <div class="form-group">
-              <label for="level" class="control-label">Nivel del grupo</label>
-              <input type="number" class="form-control" name="group-level">
-        </div>
-        <div class="form-group">
-          <label for="status">Estado</label>
-            <select class="form-control" name="status">
-              <option value="1">Activo</option>
-              <option value="0">Inactivo</option>
-            </select>
-        </div>
-        <div class="form-group clearfix">
-                <button type="submit" name="add" class="btn btn-info">Guardar</button>
-        </div>
-    </form>
-</div>-->
+</div>
 
 <?php include_once('layouts/footer.php'); ?>

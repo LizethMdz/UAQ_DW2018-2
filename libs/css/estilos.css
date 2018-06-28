@@ -210,7 +210,7 @@ section{
 	top:5px;
 	text-align: center;
 	font-size: 14px;
-  background: red;
+  background: transparent;
   position: relative;
 }
 /*DIV NOMBRE DEL USUARIO*/
@@ -221,7 +221,6 @@ section{
 	top:5px;
 	display: inline-block;
 	text-align: center;
-	background: yellow;
 	height: 40px;
 	position: relative;
 }
@@ -248,10 +247,10 @@ section{
   padding: 65px 0 0;
   height: 100%;
   width: 250px;
-  /*background: #2a3542;*/
+  /*background: #2a3542; #466099*/
   border-right: 1px solid #ddd;
   text-align: center;
-	background: #466099;
+	background: rgba(255,255,255,0.1);
   font-family:'Roboto', sans-serif;
 	overflow:auto;
 }
@@ -267,8 +266,8 @@ section{
 .contenedor-menu .menu li a {
   font-size: 15px;
   /*color: gray;*/
-	/*color: #0072B6;*/
-	color:#fff;
+	color: #0072B6;
+
   display: block;
   padding: 13px 10px;
   background:transparent;
@@ -546,6 +545,7 @@ table.table-user, table.table-group{
 	cursor: pointer;
 	left: 5px;
 	display: inline-block;
+	box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tile-text{
@@ -594,6 +594,36 @@ small{
 	position: relative;
 
 }
+
+.overlay-p {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: rgb(28,216,216);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.tile-text:hover .overlay-p {
+  width: 100%;
+  left: 0;
+}
+
+.text-p {
+  white-space: nowrap;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 label{
 	font-size: 20px;
 }
@@ -608,6 +638,20 @@ label{
 h3{
 	font-weight: normal;
 	font-size: 25px;
+}
+
+/*RESPOSIVE*/
+@media only screen and (max-width: 700px) {
+    .tile {
+        width: 49.99999%;
+        margin: 6px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .tile {
+        width: 100%;
+    }
 }
 
 /*=======TABLAS PANEL===========*/
@@ -797,7 +841,7 @@ a.btn-ico:hover{
 /*======ESTILOS PARA MEDIA============*/
 .media{
 	width: 95%;
-	height: 700px;
+	height: 800px;
 }
 
 
@@ -846,6 +890,94 @@ a.bt-media:hover{
 .btn-enviar:hover{
 	  background:  #ff5722;
 }
+
+/*Despliege de los productos*/
+.contenedor-prod {
+  width: 20%;
+  background-color:transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  margin-bottom: 25px;
+	position: relative;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+div.texto-prod {
+  text-align: center;
+  padding: 10px 20px;
+	background:
+}
+
+.sub-texto{
+	color: #86736D;
+
+}
+
+/*Animacion DIV*/
+
+div.image-prod {
+  width: 100%;
+  height: 150px;
+}
+/*Animacion*/
+.overlay-prod {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#F5F5F5;
+}
+
+.image-prod:hover .overlay-prod {
+  opacity: 1;
+}
+
+.text-prod {
+  color: #0087C0;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+a.icon-prod{
+	text-decoration: none;
+	color: #4A7CC8;
+}
+
+a.icon-prod:hover{
+	color: #51ADED;
+}
+.text-prod i{
+	margin-left: 20px;
+	margin-right: 5px;
+	margin-top: 20px;
+	font-size: 14px
+
+}
+
+/*RESPOSIVE*/
+@media only screen and (max-width: 700px) {
+    .contenedor-prod {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .contenedor-prod {
+        width: 100%;
+    }
+}
+
 
 /*ESTILOS USER- Reporte de ventas*/
 
@@ -954,6 +1086,33 @@ button.button-2 span {
 	left:5%;
 	height: 250px;
 	position: absolute;
+	  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.contenedor-perfil:hover .overlay {
+  opacity: 1;
 }
 
 .img-perfil{
@@ -1102,29 +1261,6 @@ th.title-enc{
 th{
 	color: black;
 }
-/*
-.input-busq{
-	margin-top:2%;
-	margin-left: 50px;
-	width: 50%;
-	padding:10px 5px 10px 5px;
-
-}
-.bord{
-	margin-top:5%;
-	padding: 5px;
-}
-
-.btn-buscar{
-	background:#FCC108  ;
-	height: 35px;
-	width: 30%;
-	color: white;
-	outline: none;
-	padding: 10px;
-	border-radius: 5px;
-}*/
-
 
 /*div contenedor*/
 
@@ -1391,7 +1527,7 @@ table.tabla-sales{
 
 	.list-group-item{
 		color: #3458C1;
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	.btn-agregar{
@@ -1404,4 +1540,3 @@ table.tabla-sales{
 	.btn-agregar:hover{
 		background: #0491AC;
 	}
->>>>>>> master

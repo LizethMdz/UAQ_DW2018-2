@@ -41,117 +41,48 @@ if (isset($msg)){
  ?>
 
 </div>
-<div class="panel-control" style="background:#F1F2F7;">
+<div class="panel-control">
 
- <!--CATEGORIAS-->
- <div class="tabla media">
-            <div class="tabla-encabezado">
-              <form action="media.php" method="POST" enctype="multipart/form-data">
-             <i class="fas fa-camera table-icon"></i>
-             <p>LISTA DE IMAGENES</p>
-               <input type="file" class="input-media" name="file_upload"  multiple="multiple" >
+      <div class="tabla media">
+                 <div class="tabla-encabezado">
+                   <form action="media.php" method="POST" enctype="multipart/form-data">
+                  <i class="fas fa-camera table-icon"></i>
+                  <p>LISTA DE IMAGENES</p>
+                    <input type="file" class="input-media" name="file_upload"  multiple="multiple" >
 
-               <button type="submit" class="btn-enviar" name="submit" class="btn btn-default">
-                Enviar<i class="fas fa-upload table-icon" style="color:#fff;"></i></button>
-             </form>
+                    <button type="submit" class="btn-enviar" name="submit" class="btn btn-default">
+                     Enviar<i class="fas fa-upload table-icon" style="color:#fff;"></i></button>
+                  </form>
 
-           </div>
-           <div class="contenedor-tabla">
-           <table border="1px" class="tabla-datos">
-           <thead>
-             <tr>
-               <th>#</th>
-               <th>Imagen</th>
-               <th>Descripción</th>
-               <th>Tipo</th>
-               <th>Acciones</th>
-             </tr>
-           </thead>
-           <tbody>
-             <?php foreach ($media_files as $media_file): ?>
-                <tr>
-                  <td><?php echo count_id();?></td>
-                  <td><img src="uploads/products/<?php echo $media_file['file_name'];?>" width="100px"></td>
-                  <td><?php echo $media_file['file_name'];?></td>
-                  <td><?php echo $media_file['file_type'];?></td>
-                  <td>
-                    <a href="delete_media.php?id=<?php echo (int) $media_file['id'];?>" class=" bt-media">
-                      <span><i class="fas fa-trash-alt"></i></span>
-                   </a>
-                  </td>
-               </tr>
-              <?php endforeach;?>
-           </tbody>
+                </div>
 
-         </table>
-         </div>
-         </div>
+                <div class="contenedor-tabla">
+                   <?php foreach ($media_files as $media_file): ?>
 
-</div>
+                        <div class="contenedor-prod">
+                          <div class="image-prod">
+                            <img src="uploads/products/<?php echo $media_file['file_name'];?>" style="width:100%; height:150px; display: block;" >
+                            <div class="overlay-prod">
+                                <div class="text-prod"><?php echo $media_file['file_name'];?></div>
+                            </div>
+                          </div>
+                            <div class="texto-prod" >
+                              <a href="delete_media.php?id=<?php echo (int) $media_file['id'];?>" class="icon-prod">
+                                <i class="fas fa-trash-alt"></i>
+                                <small>Elimimar</small>
+                              </a>
+                                <br>
+                                <small class="sub-texto">ID:<?php echo count_id();?></small>
+                                <br>
+                                <small class="sub-texto">Tipo: <?php echo $media_file['file_type'];?></small>
 
+                            </div>
 
-
-<!--
-     <div class="row">
-        <div class="col-md-6">
-          <?php echo display_msg($msg); ?>
-        </div>
-
-      <div class="col-md-12">
-        <div class="panel panel-default">
-          <div class="panel-heading clearfix">
-            <span class="glyphicon glyphicon-camera"></span>
-            <span>Lista de imagenes</span>
-            <div class="pull-right">
-              <form class="form-inline" action="media.php" method="POST" enctype="multipart/form-data">
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-btn">
-                    <input type="file" name="file_upload" multiple="multiple" class="btn btn-primary btn-file"/>
-                 </span>
-
-                 <button type="submit" name="submit" class="btn btn-default">Subir</button>
-               </div>
-              </div>
-             </form>
-            </div>
-          </div>
-          <div class="panel-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th class="text-center" style="width: 50px;">#</th>
-                  <th class="text-center">Imagen</th>
-                  <th class="text-center">Descripción</th>
-                  <th class="text-center" style="width: 20%;">Tipo</th>
-                  <th class="text-center" style="width: 50px;">Acciones</th>
-                </tr>
-              </thead>
-                <tbody>
-                <?php foreach ($media_files as $media_file): ?>
-                <tr class="list-inline">
-                 <td class="text-center"><?php echo count_id();?></td>
-                  <td class="text-center">
-                      <img src="uploads/products/<?php echo $media_file['file_name'];?>" class="img-thumbnail" />
-                  </td>
-                <td class="text-center">
-                  <?php echo $media_file['file_name'];?>
-                </td>
-                <td class="text-center">
-                  <?php echo $media_file['file_type'];?>
-                </td>
-                <td class="text-center">
-                  <a href="delete_media.php?id=<?php echo (int) $media_file['id'];?>" class="btn btn-danger btn-xs"  title="Eliminar">
-                    <span class="glyphicon glyphicon-trash"></span>
-                  </a>
-                </td>
-               </tr>
-              <?php endforeach;?>
-            </tbody>
-          </div>
-        </div>
+                         </div>
+                      <?php endforeach;?>
+                </div>
       </div>
-</div>-->
 
+  </div>
 
 <?php include_once('layouts/footer.php'); ?>
