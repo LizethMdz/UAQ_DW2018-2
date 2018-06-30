@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2018 a las 20:14:51
+-- Tiempo de generación: 30-06-2018 a las 20:34:26
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
 
@@ -40,6 +40,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`) VALUES
 (2, 'Autos'),
 (3, 'Comida'),
+(4, 'Dulces'),
 (1, 'Repuestos');
 
 -- --------------------------------------------------------
@@ -60,7 +61,10 @@ CREATE TABLE `media` (
 
 INSERT INTO `media` (`id`, `file_name`, `file_type`) VALUES
 (1, 'filter.jpg', 'image/jpeg'),
-(2, 'coche1.jpg', 'image/jpeg');
+(2, 'coche1.jpg', 'image/jpeg'),
+(3, 'cohe.png', 'image/png'),
+(4, 'coche2.jpg', 'image/jpeg'),
+(5, 'coche3.jpg', 'image/jpeg');
 
 -- --------------------------------------------------------
 
@@ -85,7 +89,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `quantity`, `buy_price`, `sale_price`, `categorie_id`, `media_id`, `date`) VALUES
 (1, 'Filtro de gasolina', '100', '5.00', '10.00', 1, 1, '2017-06-16 07:03:16'),
-(2, 'Audi', '0', '20000.00', '35000.00', 2, 0, '2018-06-12 23:58:59'),
+(2, 'Audi', '8', '20000.00', '35000.00', 2, 4, '2018-06-12 23:58:59'),
 (3, 'Nissan', '5', '80200.00', '81500.00', 2, 2, '2018-06-16 18:54:22');
 
 -- --------------------------------------------------------
@@ -131,9 +135,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `user_level`, `image`, `status`, `last_login`) VALUES
-(1, 'Admin Users', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, '1f3fq57w1.PNG', 1, '2018-06-16 18:47:07'),
-(2, 'Special User', 'special', 'ba36b97a41e7faf742ab09bf88405ac04f99599a', 2, '5jvkx6oz2.jpg', 1, '2018-06-13 00:07:48'),
-(3, 'Default User', 'user', '12dea96fec20593566ab75692c9949596833adc9', 3, 'v9wwfvr53.png', 1, '2018-06-16 01:47:04');
+(1, 'Admin Users', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, '1f3fq57w1.PNG', 1, '2018-06-30 20:17:02'),
+(3, 'Default User', 'user', '12dea96fec20593566ab75692c9949596833adc9', 3, 'y0z0k2qx3.jpg', 1, '2018-06-27 18:47:36'),
+(4, 'Luis Ortega', 'LuisOrt', 'cdeaa8eb3fadff8320df75b4f12dcc072a88145f', 3, 'no_image.jpg', 1, '2018-06-27 01:52:23');
 
 -- --------------------------------------------------------
 
@@ -214,13 +218,13 @@ ALTER TABLE `user_groups`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -238,7 +242,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `user_groups`
@@ -272,4 +276,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
