@@ -11,10 +11,10 @@
    validate_fields($req_fields);
 
    if(find_by_groupName($_POST['group-name']) === false ){
-     $session->msg('d','<b>Error!</b> El nombre de grupo realmente existe en la base de datos');
+     $session->msg('d','<b>Error!</b> El nombre de grupo ya existe en la base de datos');
      redirect('add_group.php', false);
    }elseif(find_by_groupLevel($_POST['group-level']) === false) {
-     $session->msg('d','<b>Error!</b> El nombre de grupo realmente existe en la base de datos ');
+     $session->msg('d','<b>Error!</b> El nivel de grupo ya existe en la base de datos ');
      redirect('add_group.php', false);
    }
    if(empty($errors)){
@@ -27,6 +27,7 @@
         $query .=") VALUES (";
         $query .=" '{$name}', '{$level}','{$status}'";
         $query .=")";
+
         if($db->query($query)){
           //sucess
           $session->msg('s',"Grupo ha sido creado! ");
@@ -70,22 +71,22 @@ if (isset($msg)){
           <p style="color: #3458C1; text-align: center; margin-left:5px; font-size: 24px;
           ">Agregar nuevo Grupo de Usuarios</p>
           <form action="add_group.php" method="post">
-          <p style="margin-top: 15px; margin-left: 25px;
-          color: #3458C1; font-size: 14px;">Nombre del Grupo</p>
-          <input type="name" placeholder="Grupo" class="input-grp" name="group-name">
-          <p style="margin-left: 25px;
-          color: #3458C1; font-size: 14px;">Nivel del Grupo</p>
-          <input type="number" placeholder="Nivel" class="input-grp" name="group-level">
-          <p style="margin-left: 25px;
-          color: #3458C1; font-size: 14px;">Estado</p>
-          <select class="select-st" name="status">
-              <option value="1">Activo</option>
-              <option value="0">Inactivo</option>
-            </select>
-          <button style="padding: 10px;
-          margin-left: 25px; margin-top: 25px; background: #3458C1; color:#fff;" type="submit" name="add">
-            Cambiar
-          </button>
+                <p style="margin-top: 15px; margin-left: 25px;
+                color: #3458C1; font-size: 14px;">Nombre del Grupo</p>
+                <input type="name" placeholder="Grupo" class="input-grp" name="group-name" required>
+                <p style="margin-left: 25px;
+                color: #3458C1; font-size: 14px;">Nivel del Grupo</p>
+                <input type="number" placeholder="Nivel" class="input-grp" name="group-level">
+                <p style="margin-left: 25px;
+                color: #3458C1; font-size: 14px;">Estado</p>
+                <select class="select-st" name="status">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                  </select>
+                <button style="padding: 10px;
+                margin-left: 25px; margin-top: 25px; background: #3458C1; color:#fff;" type="submit" name="add">
+                  Agregar
+                </button>
         </form>
         </div>
 </div>

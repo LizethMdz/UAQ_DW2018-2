@@ -169,7 +169,8 @@
                 </a>
               </td>
 
-              <td><?php echo remove_junk(first_character($recent_product['name']));?></td>
+              <td><?php echo remove_junk(first_character($recent_product['name']));?>,
+                <span class="bg-categoria"><?php echo remove_junk(ucfirst($recent_product['categorie'])); ?></span> </td>
               <td>$ <?php echo (int)$recent_product['sale_price']; ?></td>
             </tr>
 

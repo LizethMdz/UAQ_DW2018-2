@@ -3,6 +3,7 @@ body{
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
+	font-size: 14px;
   height: 100%;
   width: 100%;
   /*background: #F1F2F7;*/
@@ -217,12 +218,18 @@ section{
 .header-user-name{
 	text-decoration:none;
 	color:#fff;
-	margin: 0px;
-	top:5px;
-	display: inline-block;
+	margin: 3px;
+	padding: 2px;
 	text-align: center;
-	height: 40px;
-	position: relative;
+	display: inline-block;
+	height: 30px;
+	position: absolute;
+}
+
+.header-user-name:hover{
+
+	color:#1BD3D3;
+
 }
 /*IMAGEN DEL USUARIO*/
 .img-user {
@@ -479,6 +486,30 @@ table.table-user, table.table-group{
 	text-align: center;
 }
 
+/*GRUPOS Y USUARIOS ACTIVO O INACTIVO*/
+.estado-A{
+	padding:2px 5px;
+	color:#fff;
+	background:#40B840;
+	border-radius:2px;
+	font-size: 12px;
+}
+
+.estado-I{
+	padding:2px 5px;
+	color:#fff;
+	background:#FF3C36;
+	border-radius:2px;
+	font-size: 12px;
+}
+
+.bg-categoria{
+	padding:2px 5px;
+	color:#fff;
+	background:#FFA72C;
+	border-radius:2px;
+	font-size: 12px;
+}
 
 /************************************************/
 /*INDEX CONTENEDOR*/
@@ -1523,12 +1554,22 @@ table.tabla-sales{
 		background: white;
 		border-radius: 2px;
 		border: 1px solid #3458C1;
+		cursor: pointer;
 	}
 
 	.list-group-item{
 		color: #3458C1;
 		font-size: 12px;
+    cursor: pointer;
 	}
+	.list-group:hover{
+		color: #25B7D3;
+		border: 1px solid #25B7D3;
+	}
+
+  .list-group-item:hover{
+    color: #25B7D3;
+  }
 
 	.btn-agregar{
 		color: white;

@@ -108,13 +108,13 @@ if (isset($msg)){
             <br>
             <i class="fas fa-cart-plus icon-pro" style="margin-left: 25px;"></i>
 
-            <input type="text" class="input-product lineal" name="product-quantity" value="<?php echo remove_junk($product['quantity']); ?>">
+            <input type="number" class="input-product lineal" name="product-quantity" value="<?php echo remove_junk($product['quantity']); ?>">
 
             <i class="fas fa-dollar-sign icon-pro"></i>
             <input type="number" class="input-product lineal" name="buying-price" value="<?php echo remove_junk($product['buy_price']);?>">
             <p class="text-icon">.00</p>
             <i class="fas fa-dollar-sign icon-pro"></i>
-            <input type="text" class="input-product lineal" name="saleing-price" value="<?php echo remove_junk($product['sale_price']);?>">
+            <input type="number" class="input-product lineal" name="saleing-price" value="<?php echo remove_junk($product['sale_price']);?>">
 
              <p class="text-icon">.00</p>
 

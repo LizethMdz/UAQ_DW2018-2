@@ -86,8 +86,9 @@ function total_price($totals){
 /* FUNCION QUE HACE LEGIBLE UNA FECHA
 /*--------------------------------------------------------------*/
 function read_date($str){
+    date_default_timezone_set("America/Mexico_City");
      if($str)
-      return date('d/m/Y g:i:s a', strtotime($str));
+      return date('d/m/Y', strtotime($str));
      else
       return null;
   }
@@ -95,6 +96,7 @@ function read_date($str){
 /* FUNCION QUE DA FORMATO A LA FECHA
 /*--------------------------------------------------------------*/
 function make_date(){
+  date_default_timezone_set("America/Mexico_City");
   return strftime("%Y-%m-%d %H:%M:%S", time());
 }
 /*--------------------------------------------------------------*/

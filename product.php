@@ -29,7 +29,7 @@ if (isset($msg)){
 </div>
   <div class="row">
 
-    <div class="col-md-12">
+    
       <div class="panel">
         <div class="panel-heading clearfix">
             <strong>
@@ -45,7 +45,7 @@ if (isset($msg)){
                 <th> Imagen</th>
                 <th> Descripción </th>
                 <th class="text-center" style="width: 10%;"> Categoría </th>
-                <th class="text-center" style="width: 10%;"> Stock </th>
+                <th class="text-center" style="width: 10%;"> Cantidad </th>
                 <th class="text-center" style="width: 10%;"> Precio de compra </th>
                 <th class="text-center" style="width: 10%;"> Precio de venta </th>
                 <th class="text-center" style="width: 10%;"> Agregado </th>
@@ -81,6 +81,6 @@ if (isset($msg)){
           </table>
         </div>
       </div>
-    </div>
+
   </div>
   <?php include_once('layouts/footer.php'); ?>

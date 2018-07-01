@@ -63,9 +63,9 @@ if (isset($msg)){
            <td class="text-center"><?php echo remove_junk(ucwords($a_user['group_name']))?></td>
            <td class="text-center">
            <?php if($a_user['status'] === '1'): ?>
-            <span class="label label-success"><?php echo "Activo"; ?></span>
+            <span class="estado-A"><?php echo "Activo"; ?></span>
           <?php else: ?>
-            <span class="label label-danger"><?php echo "Inactivo"; ?></span>
+            <span class="estado-I"><?php echo "Inactivo"; ?></span>
           <?php endif;?>
            </td>
            <td><?php echo read_date($a_user['last_login'])?></td>

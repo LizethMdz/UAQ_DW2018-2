@@ -76,46 +76,47 @@ if (isset($msg)){
          </div>
 
          <div class="contenedor-tabla">
-           <p style="color:#3458C1 ;  font-size: 14px; margin-left: 25px; display: block;">Nombre del Producto</p>
-           <i class="fas fa-th-large icon-pro" style="margin-left: 25px;"></i>
-           <input type="text" class="input-product" style="display: inline-block; margin-left: 0px;" name="product-title">
-           <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Categoria</p>
-           <select name="product-categorie" class="input-product">
-             <option value="">Selecciona una Categoria</option>
-             <?php  foreach ($all_categories as $cat): ?>
-               <option value="<?php echo (int)$cat['id'] ?>">
-                 <?php echo $cat['name'] ?></option>
-             <?php endforeach; ?>
-           </select>
-           <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Imagen del producto</p>
-           <select name="product-photo" id="" class="input-product">
-             <option value="">Sin imagen</option>
-             <?php  foreach ($all_photo as $photo): ?>
-               <option value="<?php echo (int)$photo['id'] ?>">
-                 <?php echo $photo['file_name'] ?></option>
-             <?php endforeach; ?>
-           </select>
+           <form method="post" action="add_product.php">
+                   <p style="color:#3458C1 ;  font-size: 14px; margin-left: 25px; display: block;">Nombre del Producto</p>
+                   <i class="fas fa-th-large icon-pro" style="margin-left: 25px;"></i>
+                   <input type="text" class="input-product" style="display: inline-block; margin-left: 0px;" name="product-title">
+                   <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Categoria</p>
+                   <select name="product-categorie" class="input-product">
+                     <option value="">Selecciona una Categoria</option>
+                     <?php  foreach ($all_categories as $cat): ?>
+                       <option value="<?php echo (int)$cat['id'] ?>">
+                         <?php echo $cat['name'] ?></option>
+                     <?php endforeach; ?>
+                   </select>
+                   <p style="color:#3458C1 ; font-size: 14px; margin-left: 25px; display: block;">Imagen del producto</p>
+                   <select name="product-photo" id="" class="input-product">
+                     <option value="">Sin imagen</option>
+                     <?php  foreach ($all_photo as $photo): ?>
+                       <option value="<?php echo (int)$photo['id'] ?>">
+                         <?php echo $photo['file_name'] ?></option>
+                     <?php endforeach; ?>
+                   </select>
 
-           <p style="color:#3458C1 ; font-size: 14px; margin-left: 130px;">Cantidad</p>
-           <p style="color:#3458C1 ; font-size: 14px; margin-left:130px;">Precio de Compra</p>
-           <p style="color:#3458C1 ; font-size: 14px; margin-left: 140px;">Precio de venta</p>
-           <br>
-           <i class="fas fa-cart-plus icon-pro" style="margin-left: 25px;"></i>
+                   <p style="color:#3458C1 ; font-size: 14px; margin-left: 130px;">Cantidad</p>
+                   <p style="color:#3458C1 ; font-size: 14px; margin-left:130px;">Precio de Compra</p>
+                   <p style="color:#3458C1 ; font-size: 14px; margin-left: 140px;">Precio de venta</p>
+                   <br>
+                   <i class="fas fa-cart-plus icon-pro" style="margin-left: 25px;"></i>
 
-           <input type="text" name="product-quantity" class="input-product lineal">
+                   <input type="number" name="product-quantity" class="input-product lineal" placeholder="Cantidad">
 
-           <i class="fas fa-dollar-sign icon-pro"></i>
-           <input type="text" class="input-product lineal" name="buying-price">
-           <p class="text-icon">.00</p>
-           <i class="fas fa-dollar-sign icon-pro"></i>
-           <input type="text" class="input-product lineal" name="saleing-price">
+                   <i class="fas fa-dollar-sign icon-pro"></i>
+                   <input type="number" class="input-product lineal" name="buying-price" placeholder="Precio de Compra">
+                   <p class="text-icon">.00</p>
+                   <i class="fas fa-dollar-sign icon-pro"></i>
+                   <input type="number" class="input-product lineal" name="saleing-price" placeholder="Precio de Venta">
 
-            <p class="text-icon">.00</p>
+                    <p class="text-icon">.00</p>
 
-            <button type="submit" name="add_product" class="button bg-success btn-actu">
-           <!--<a href="#">-->
-               <span><i class="fas fa-pen-square"></i></span>Agregar
-           </button>
+                    <button type="submit" name="add_product" class="button bg-success btn-actu">
+                       <span><i class="fas fa-pen-square"></i></span>Agregar
+                   </button>
+         </form>
          </div>
        </div>
     </div>

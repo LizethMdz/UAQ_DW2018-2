@@ -5,8 +5,7 @@ $page_title = 'Reporte de ventas';
    page_require_level(3);
 ?>
 <?php include_once('layouts/header.php'); ?>
-<<<<<<< HEAD
-=======
+
 <!--ERRORES O MENSAJES-->
 <?php
 if (isset($msg)){

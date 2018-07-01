@@ -95,27 +95,29 @@ if (isset($msg)){
           </div>
 
           <div class="cont-data izqui">
-            <p class="text-subtitulos">Nombres</p>
-            <input type="name" name="name" class="input-e" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
-            <p class="text-subtitulos">Usuario</p>
-            <input type="text" name="username" class="input-e" value="<?php echo remove_junk(ucwords($e_user['username'])); ?>">
-            <p class="text-subtitulos">Rol de Usuario</p>
-          <select class="select-st-u" name="level" style="margin-top: 10px;">
-            <?php foreach ($groups as $group ):?>
-             <option <?php if($group['group_level'] === $e_user['user_level']) echo 'selected="selected"';?> value="<?php echo $group['group_level'];?>"><?php echo ucwords($group['group_name']);?></option>
-          <?php endforeach;?>
+            <form method="post" action="edit_user.php?id=<?php echo (int)$e_user['id'];?>">
+                <p class="text-subtitulos">Nombres</p>
+                <input type="name" name="name" class="input-e" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
+                <p class="text-subtitulos">Usuario</p>
+                <input type="text" name="username" class="input-e" value="<?php echo remove_junk(ucwords($e_user['username'])); ?>">
+                <p class="text-subtitulos">Rol de Usuario</p>
+              <select class="select-st-u" name="level" style="margin-top: 10px;">
+                <?php foreach ($groups as $group ):?>
+                 <option <?php if($group['group_level'] === $e_user['user_level']) echo 'selected="selected"';?> value="<?php echo $group['group_level'];?>"><?php echo ucwords($group['group_name']);?></option>
+              <?php endforeach;?>
 
-            </select>
+                </select>
 
-            <p class="text-subtitulos">Estado</p>
-          <select class="select-st-u" name="" style="margin-top: 10px;">
-            <option <?php if($e_user['status'] === '1') echo 'selected="selected"';?>value="1">Activo</option>
-            <option <?php if($e_user['status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
-            </select>
+                <p class="text-subtitulos">Estado</p>
+                <select class="select-st-u" name="status" style="margin-top: 10px;">
+                    <option <?php if($e_user['status'] === '1') echo 'selected="selected"';?>value="1">Activo</option>
+                    <option <?php if($e_user['status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
+                </select>
 
-            <button type="submit" name="" class="button orange btn-actu">
-                <span><i class="fas fa-pen-square"></i></span>Actualizar
-            </button>
+                <button type="submit" name="update" class="button orange btn-actu">
+                    <span><i class="fas fa-pen-square"></i></span>Actualizar
+                </button>
+            </form>
           </div>
 
         </div>
@@ -136,9 +138,6 @@ if (isset($msg)){
             <button type="submit" name="update-pass" class="btn-ch-password">
               Cambiar
             </button>
-
-
-
           </form>
         </div>
         </div>

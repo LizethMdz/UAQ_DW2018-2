@@ -62,41 +62,20 @@ if (isset($msg)){
         <div class="form-ch-pass">
           <p style="color: #3458C1; margin-left: 50px; font-size: 24px;
           ">Cambiar Contraseña</p>
-          <form action="
-          ">
-          <p style="margin-top: 30px; margin-left: 25px;
-          color:#3458C1; font-size: 14px;">Nueva Contraseña</p>
-          <input type="password" placeholder="Nueva Contraseña" class="input-ch-p" name="new-password">
-          <p style="margin-left: 25px;
-          color:#3458C1; font-size: 14px;">Antigua Contraseña</p>
-          <input type="password" placeholder="Antigua Contraseña" class="input-ch-p" name="old-password">
-          <input type="hidden" name="id" value="<?php echo (int)$user['id'];?>">
-          <button type="submit" style="padding: 10px;
-          margin-left: 25px; margin-top: 25px; background: #5BC0DE; color:#fff;" name="update">
-            Cambiar
-          </button>
-        </form>
+          <form method="post" action="change_password.php">
+              <p style="margin-top: 30px; margin-left: 25px;
+              color:#3458C1; font-size: 14px;">Nueva Contraseña</p>
+              <input type="password" placeholder="Nueva Contraseña" class="input-ch-p" name="new-password">
+              <p style="margin-left: 25px;
+              color:#3458C1; font-size: 14px;">Antigua Contraseña</p>
+              <input type="password" placeholder="Antigua Contraseña" class="input-ch-p" name="old-password">
+              <input type="hidden" name="id" value="<?php echo (int)$user['id'];?>">
+              <button type="submit" style="padding: 10px;
+              margin-left: 25px; margin-top: 25px; background: #5BC0DE; color:#fff;" name="update">
+                Cambiar
+              </button>
+          </form>
         </div>
      </div>
-<!--
-<div class="login-page">
-    <div class="text-center">
-       <h3>Cambiar contraseña</h3>
-     </div>
-     <?php echo display_msg($msg); ?>
-      <form method="post" action="change_password.php" class="clearfix">
-        <div class="form-group">
-              <label for="newPassword" class="control-label">Nueva contraseña</label>
-              <input type="password" class="form-control" name="new-password" placeholder="Nueva contraseña">
-        </div>
-        <div class="form-group">
-              <label for="oldPassword" class="control-label">Antigua contraseña</label>
-              <input type="password" class="form-control" name="old-password" placeholder="Antigua contraseña">
-        </div>
-        <div class="form-group clearfix">
-               <input type="hidden" name="id" value="<?php echo (int)$user['id'];?>">
-                <button type="submit" name="update" class="btn btn-info">Cambiar</button>
-        </div>
-    </form>
-</div>-->
+
 <?php include_once('layouts/footer.php'); ?>
