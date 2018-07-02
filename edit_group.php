@@ -71,9 +71,8 @@ if (isset($msg)){
           <p  class="text-subtitulos">Nivel del Grupo</p>
           <input type="number" placeholder="Nivel" class="input-grp" name="group-level" value="<?php echo (int)$e_group['group_level']; ?>">
           <p  class="text-subtitulos">Estado</p>
-          <select class="select-st" name="status">
+           <select class="select-st" name="status">
             <option <?php if($e_group['group_status'] === '1') echo 'selected="selected"';?> value="1"> Activo </option>
-            <option <?php if($e_group['group_status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
             <option <?php if($e_group['group_status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
             </select>
           <button type="submit" class="btn-e-c" name="update">

@@ -78,8 +78,8 @@ function tableExists($tabla){
       }
   }
  /*--------------------------------------------------------------*/
- /* Login with the data provided in $_POST,
- /* coming from the login form.
+ /* Autenticacion de los datos del login.
+ /* Username, Password
 /*--------------------------------------------------------------*/
   function authenticate($username='', $password='') {
     global $db;
@@ -149,7 +149,7 @@ function tableExists($tabla){
     return($db->num_rows($resultado) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* FUNCINO QUE DETERMINA EL NIVEL DE UN GRUPO
+  /* FUNCION QUE DETERMINA EL NIVEL DE UN GRUPO
   /*--------------------------------------------------------------*/
   function find_by_groupLevel($level)
   {
@@ -179,7 +179,7 @@ function tableExists($tabla){
       else:
             $session->msg("d", "¡Lo siento!  no tienes permiso para ver la página.");
             redirect('home.php', false);
-        endif;
+      endif;
 
      }
    /*--------------------------------------------------------------*/
